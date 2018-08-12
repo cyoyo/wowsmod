@@ -1,0 +1,1353 @@
+<battle_layout.xml>
+<element>
+  <id>minimapClip</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>4</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>4</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>unboundInfoPanel</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>1</type>
+    <glueElementID>minimapClip</glueElementID>
+    <glueElementCoord>1</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>-125</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>minimapClip</glueElementID>
+    <glueElementCoord>1</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>13</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>battleHint</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>6</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>minimapClip</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>8</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>indicatorSpeed</id>
+  <hasAnimationInside>True</hasAnimationInside>
+   <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>245</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>34</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>shipStateBars</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>16</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>224</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>combatLog</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>6</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>318</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>allyEar</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>67</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>enemyEar</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type> 
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>67</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>damageWidget</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>16</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type> 
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>26</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>ribbonContainer</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>1</type>
+    <glueElementID>damageWidget</glueElementID>
+    <glueElementCoord>1</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>-10</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type> 
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>27</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>ribbonAppear</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>60</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>minimapClip</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-80</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>indicatorAngle</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+  	<type>1</type>
+  	<glueElementID>modulesBar</glueElementID>
+  	<glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-17</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>modulesBar</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>barReloadContainer</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>3</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<!-- <element>
+  <id>quickCommandHelpPanel_h</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>barReloadContainer</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element> -->
+<element>
+  <id>quickCommandHelpPanel_v</id>
+  <hasAnimationInside>True</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>400</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>15</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>captureBase</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>logPlayerState</glueElementID>
+    <glueElementCoord/>4<glueElementCoord/>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>26</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>repairIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>logPlayerState</glueElementID>
+    <glueElementCoord/>4<glueElementCoord/>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>26</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>evacuationIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord></glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>90</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>headerPlayersNum</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+	<glueElementID>4</glueElementID>
+	  <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>5</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>cameraText</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord/>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>40</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>observedPlayerLabel</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord/>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>17</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord/>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>286</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>convoyContainer</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord/>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>40</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>prebattleText</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>1</type>
+    <glueElementID>battleProgress</glueElementID>
+    <glueElementCoord>6</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>16</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>deathPanel</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>1</type>
+    <glueElementID>compassClip</glueElementID>
+    <glueElementCoord>3</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>35</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>30</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>alarmClipCompass</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>alarmClipCenter</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>crosshairDefault</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>damageClip</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>crosshairDefault</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>frustumClip</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>120</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>gunRotatorClips</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>shipDollClip</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>compassClip</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>pingometer</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>3</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>3</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>helpHint</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>5</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>3</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>battleTimer</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>175</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>1</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>gameVersion</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>3</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>-30</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>tacticalMapHelp</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>400</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>115</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>autopilot_indicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>286</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>161</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>logEvent</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>-300</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>115</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>expectedAction</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>24</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>logPlayerState</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>indicatorAngle</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>5</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>logPlayerAction</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>180</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>indicatorGunsLocked</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>crosshairDefault</glueElementID>
+    <glueElementCoord>6</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>65</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>crosshairSpectator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>indicatorCollisionText</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>logEvent</glueElementID>
+    <glueElementCoord>6</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>21</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>deathList</id>
+  <hasAnimationInside>False</hasAnimationInside>
+<vglue>
+    <type>2</type>
+    <glueElementID>3</glueElementID>
+    <elementConstraintType>3</elementConstraintType>
+    <glueElementCoord>0</glueElementCoord>
+    <distanceFromGlue>24</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>1</type>
+    <glueElementID>minimapClip</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>10</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>crosshairDefault</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element><element>
+  <id>crosshairLocked</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>nearestEnemyIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>barReloadContainer</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>1</type>
+    <glueElementID>weaponsPanel</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-5</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active> 
+</element>
+<!--weaponsPanel-->
+<element>
+  <id>weaponsPanel</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>2</elementConstraintType>
+    <distanceFromGlue>20</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>16</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>indicatorGKAI</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>430</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>2</type>
+    <glueElementID>6</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>140</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>atbaOffIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>1</type>
+    <glueElementID>weaponsPanel</glueElementID>
+    <glueElementCoord>1</glueElementCoord>
+    <elementConstraintType>3</elementConstraintType>
+    <distanceFromGlue>-10</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>1</type>
+    <glueElementID>weaponsPanel</glueElementID>
+    <glueElementCoord>6</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>23</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>shipVisibilityIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>210</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-198</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>intuitionIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>290</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-200</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>smokeIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>-280</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-185</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>weatherIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>-340</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-188</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>toxicSmokeIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>290</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-140</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>localWeatherIndicator</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>-290</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>6</elementConstraintType>
+    <distanceFromGlue>-105</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>compassWithNose</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>crosshairFPS</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>gunMarkerPlaceholder</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+   <hglue>
+    <type>1</type>
+    <glueElementID>crosshairDefault</glueElementID>
+    <glueElementCoord>4</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+<element>
+  <id>invitationContainer</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>2</type>
+    <glueElementID>1</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>5</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>5</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>battleProgress</id>
+  <hasAnimationInside>False</hasAnimationInside>
+  <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <glueElementCoord>0</glueElementCoord>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+    <type>2</type>
+    <glueElementID>4</glueElementID>
+    <glueElementCoord/>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>30</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+
+<element>
+  <id>unboundDogTagKillCam</id>
+  <hasAnimationInside>False</hasAnimationInside>
+ <vglue>
+    <type>0</type>
+    <glueElementID>vertCenter</glueElementID>
+    <elementConstraintType>1</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </vglue>
+  <hglue>
+   <type>0</type>
+    <glueElementID>horizCenter</glueElementID>
+    <elementConstraintType>4</elementConstraintType>
+    <distanceFromGlue>0</distanceFromGlue>
+  </hglue>
+  <scaleX>1.0</scaleX>
+  <scaleY>1.0</scaleY>
+  <active>True</active>
+</element>
+</battle_layout.xml>

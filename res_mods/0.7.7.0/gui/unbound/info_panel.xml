@@ -1,0 +1,274 @@
+﻿<ui>
+	<block className="Targets">
+		<bind name="dataRefDH" value="'playerEntity'; '$dataRef.ref'"/>
+		<bind name="collectionDH" value="CC.camera; 'cameraCollection'"/>
+		<bind name="entityDH" value="'cameraEntity'; cameraCollection[0].id"/>
+		<bind name="watchDH" value="'relation'; 		['playerEntity.relation.evChanged']; playerEntity.relation.value"/>
+		<bind name="watchDH" value="'isAlive'; 			['playerEntity.health.evKilled']; playerEntity.health.isAlive"/>
+		<bind name="watchDH" value="'flags'; 			['playerEntity.target.evChanged']; playerEntity.target.flags"/>
+		<bind name="watchDH" value="'level'; 			[]; playerEntity.avatar.ship.ref.ship.levelRome"/>
+		<bind name="watchDH" value="'shipCountry'; 		[]; playerEntity.avatar.ship.ref.ship.country"/>
+		<bind name="watchDH" value="'nameUpper'; 		[]; playerEntity.avatar.ship.ref.ship.nameUpper"/>
+		<bind name="watchDH" value="'name'; 			[]; playerEntity.avatar.name"/>
+		<bind name="watchDH" value="'shipType'; 		[]; playerEntity.avatar.ship.ref.ship.subtype"/>
+		<bind name="controller" value="lesta.dialogs.controllers.CollectionController; 'players in battle'; 'name'; name; 'playerInCollection'"/>
+		<bind name="watch" value="'player'; playerInCollection[0]"/>
+		<bind name="var" value="{maxSpeed: playerInCollection[0].shipParams.maxSpeed}"/>
+		<bind name="var" value="{visibilityDistByShip: playerInCollection[0].shipParams.visibilityDistByShip}"/>
+		<bind name="var" value="{artillery_max_dist: playerInCollection[0].shipParams.artillery_max_dist}"/>
+		<bind name="var" value="{artillery_time_reload: playerInCollection[0].shipParams.artillery_time_reload}"/>
+		<bind name="var" value="{artillery_guns_count: playerInCollection[0].shipParams.artillery_guns_count}"/>
+		<bind name="var" value="{torpedoes_max_dist: playerInCollection[0].shipParams.torpedoes_max_dist}"/>
+		<bind name="var" value="{torpedoes_time_reload: playerInCollection[0].shipParams.torpedoes_time_reload}"/>		
+		<bind name="var" value="{torpedoes_guns_count: playerInCollection[0].shipParams.torpedoes_guns_count}"/>	
+		<bind name="watchDH" value="'camera'; 			['cameraEntity.camera.evAltVisionChanged','cameraEntity.camera.evTacticalStateChanged']; cameraEntity.camera"/>
+		<bind name="collectionDH" value="CC.timer; 'timerCollection'"/>
+		<bind name="entityDH" value="'timerEntity'; timerCollection[0].id"/>
+		<bind name="watchDH" value="'distance'; ['timerEntity.timer.evFrequent']; playerEntity.distance.distanceToShip"/>
+		<bind name="watch" value="'isSelf'; (relation == 0)"/>		
+		<bind name="firstEntityDH" value="'timerEntity'; CC.timer"/>	
+		<bind name="var" value="{wasVisible:false}"/>
+		<bind name="watchDH" value="'isVisible'; ['playerEntity.visibility.evChanged']; playerEntity.visibility.mapVisible"/>
+		<bind name="watchDH" value="'wasVisible'; ['playerEntity.visibility.evChanged']; playerEntity.visibility.mapVisible || wasVisible "/>
+				
+		<block>
+			<block className="chat_background" type="native">
+				<params>
+					<param name="name" value="backgroundClip"/>
+				</params>
+				<style>
+					<width value="130px"/>
+					<height value="120px"/>
+				</style>
+			</block>
+			<block type="text"> <!-- shipName -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="nameUpper"/>           
+				<style>
+					<textAlign value="right"/>
+					<left value="10px"/>
+					<top value="0px"/>
+					<position value="absolute"/>
+					<fontSize value="16"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="true"/>
+			</block>
+			<block type="text"> <!-- level -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="level"/>           
+				<style>
+					<left value="10px"/>
+					<top value="20px"/>
+					<position value="absolute"/>
+					<fontSize value="16"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="true"/>
+			</block>
+			<block type="text"> <!-- shipClass -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$MiddleAligned"/>			
+				<bind name="text" value="shipType=='Destroyer'? '7'
+													:shipType=='Cruiser'? '6'
+													:shipType=='Battleship'? '5'
+													:'4'"/>				
+				<bind name="style" value="'textColor'; '0xFFEEEEEE'"/>		
+				<style>
+					<position value="absolute"/>
+					<left value="50px"/>
+					<top value="22px"/>
+					<width value="24"/>
+					<height value="24"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+				</style>
+			</block>
+			
+			<block type="text"> <!-- visibility icon -->
+				<bind name="text" value="'X'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="10px"/>
+					<top value="40px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="visible" value="(visibilityDistByShip &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- visibility -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(visibilityDistByShip, 1)"/>           
+				<style>
+					<left value="35px"/>
+					<top value="40px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="true"/>
+			</block>
+			
+			<block type="text"> <!-- max_speed icon -->
+				<bind name="text" value="'L'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="65px"/>
+					<top value="40px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="visible" value="(maxSpeed &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- maxSpeed -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(maxSpeed, 1)"/>           
+				<style>
+					<left value="90px"/>
+					<top value="40px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="true"/>
+			</block>
+			
+			<block type="text"> <!-- artillery icon -->
+				<bind name="text" value="'F'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="10px"/>
+					<top value="60px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="style" value="'textColor'; (distance &lt; artillery_max_dist) ? '0xFF9900' :'0xEEEEEE'"/>
+				<bind name="visible" value="(artillery_guns_count &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- artillery_max_dist -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(artillery_max_dist, 1)"/>           
+				<style>
+					<left value="35px"/>
+					<top value="60px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="(artillery_guns_count &gt; 0)"/>
+			</block>
+			
+			<block type="text"> <!-- art.reload icon -->
+				<bind name="text" value="'Q'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="65px"/>
+					<top value="60px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="visible" value="(artillery_guns_count &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- artillery_time_reload -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(artillery_time_reload, 1)"/>           
+				<style>
+					<left value="90px"/>
+					<top value="60px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="(artillery_guns_count &gt; 0)"/>
+			</block>
+			
+			<block type="text"> <!-- torpedoes icon -->
+				<bind name="text" value="'J'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="10px"/>
+					<top value="80px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="style" value="'textColor'; (distance &lt; torpedoes_max_dist) ? '0xFF9900' :'0xEEEEEE'"/>
+				<bind name="visible" value="(torpedoes_guns_count &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- torpedoes_max_dist -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(torpedoes_max_dist, 1)"/>           
+				<style>
+					<left value="35px"/>
+					<top value="80px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="(torpedoes_guns_count &gt; 0)"/>
+			</block>
+			
+			<block type="text"> <!-- reload icon -->
+				<bind name="text" value="'Q'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<style>
+					<left value="65px"/>
+					<top value="80px"/>
+					<position value="absolute"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="18"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="visible" value="(torpedoes_guns_count &gt; 0)"/>
+			</block>
+			<block type="text"> <!-- torpedoes_reload -->
+				<styleClass value="$TextDefault"/>
+				<styleClass value="$LeftAligned"/>			
+				<bind name="text" value="format(torpedoes_time_reload, 1)"/>           
+				<style>
+					<left value="90px"/>
+					<top value="80px"/>
+					<position value="absolute"/>
+					<fontSize value="14"/>
+					<textColor value="0xFFEEEEEE"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="visible" value="(torpedoes_guns_count &gt; 0)"/>
+			</block>	
+		</block>
+		<bind name="visible" value="isVisible &amp;&amp; isAlive &amp;&amp; !(camera.isTactical) &amp;&amp; flags &gt; 0 &amp;&amp; flags!=2"/>
+	</block>
+
+    <block className="InfoPanel">
+		<bind name="collectionRepeatDH" value="CC.avatar; 'Targets'; 'team.enemy.sortedAlive'; {}"/>
+		<block>
+		</block>
+    </block>
+</ui>
