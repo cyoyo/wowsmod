@@ -2,22 +2,22 @@
 
 <fontconfig>
     <ASIA>
-        <lib> gui/flash/fonts_ASIA.swf </lib>
+        <lib> gui/flash/fonts_CN.swf </lib>
         <alias>
             <embedded> $ZurichCondensed </embedded>
-            <runtime> Source Han Sans JP Medium WH </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $ZurichCondensedBold </embedded>
-            <runtime> Source Han Sans JP Bold WH </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFont </embedded>
-            <runtime> Source Han Sans JP Medium WH </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFontBold </embedded>
-            <runtime> Source Han Sans JP Bold WH </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $Exo2 </embedded>
@@ -88,22 +88,22 @@
         </alias>
     </CN>
     <EU>
-        <lib> gui/flash/fonts_EU.swf </lib>
+        <lib> gui/flash/fonts_CN.swf </lib>
         <alias>
             <embedded> $ZurichCondensed </embedded>
-            <runtime> WarHeliosCondC </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $ZurichCondensedBold </embedded>
-            <runtime> WarHeliosCondCBold </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFont </embedded>
-            <runtime> WarHeliosCondC </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFontBold </embedded>
-            <runtime> WarHeliosCondCBold </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $Exo2 </embedded>
@@ -131,22 +131,22 @@
         </alias>
     </EU>
     <KO>
-        <lib> gui/flash/fonts_KO.swf </lib>
+        <lib> gui/flash/fonts_CN.swf </lib>
         <alias>
             <embedded> $ZurichCondensed </embedded>
-            <runtime> WarHeliosCond_KO </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $ZurichCondensedBold </embedded>
-            <runtime> WarHeliosCondBold_KO </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFont </embedded>
-            <runtime> WarHeliosCond_KO </runtime>
+            <runtime> Source Han Sans CN Medium WH </runtime>
         </alias>
         <alias>
             <embedded> $WWSDefaultFontBold </embedded>
-            <runtime> WarHeliosCondBold_KO </runtime>
+            <runtime> Source Han Sans CN Bold WH </runtime>
         </alias>
         <alias>
             <embedded> $Exo2 </embedded>
