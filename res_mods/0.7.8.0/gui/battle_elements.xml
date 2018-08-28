@@ -7,7 +7,11 @@
 	this file is beeing used by:		
 		\tools\wows_ui_tools\auto_draw_perf_test\generate_elements_list.py
 -->
-  <elementList>    <element name="unboundInfoPanel" class="lesta.libs.unbound.UnboundElement" url="battle_stats.swf">      <properties config='../unbound/info_panel.xml' rootElementId='InfoPanel' hitTest = "true"/>    </element>
+  <elementList>
+    <element name="unboundInfoPanel" class="lesta.libs.unbound.UnboundElement" url="battle_stats.swf">
+      <properties config='../unbound/info_panel.xml' rootElementId='InfoPanel' hitTest = "true"/>
+    </element>
+
 <element name="altMinimap" class="__ModLoader" url="alt_minimap.swf"/>
     <element name="fireScreenEffect" class="FullscreenFireEffectClip" url="fullscreen_effects.swf"/>
     <element name="placeHolderGuidesManager" class="flash.display.MovieClip" url="guide.swf"/>
@@ -34,7 +38,7 @@
     
      <element name="battleProgress" class="BattleProgressClip" url="battle_stats.swf"/>
      <element name="logEvent" class="EventLog" url="central_feedback.swf" autoPerfTestGroup="logs">
-      <properties itemRendererName="[MessageListItemRendererForVictoryPointLogs,MessageListItemRendererForVictoryPointKillsLog,MessageListItemRendererForTeamkillEvent,MessageListItemRendererForThirdParty,MessageListItemRendererWithStatus]" antiSpam="true" blinkTimer="0" enabled="true" listItemRendererDethTime="0.3" listItemRendererLifeTime="8000" messageBufferLength="1" messageBufferOverflowDeathTime="1" scrollBarStep="1" scrollPosition="left" textDisplayFlow="bottom-up" tweenTime="0.3" tweenListItemRenderer="true" hasSubstitution="true" lineSpacing="0" width="600"/>
+      <properties itemRendererName="[MessageListItemRendererForVictoryPointLogs,MessageListItemRendererForVictoryPointKillsLog,MessageListItemRendererForTeamkillEvent,MessageListItemRendererForThirdParty]" antiSpam="true" blinkTimer="0" enabled="true" listItemRendererDethTime="3" listItemRendererLifeTime="12000" messageBufferLength="1" messageBufferOverflowDeathTime="1" scrollBarStep="1" scrollPosition="left" textDisplayFlow="bottom-up" tweenTime="0.3" tweenListItemRenderer="true" hasSubstitution="true" lineSpacing="0" width="600"/>
     </element>
     <element name="deathList" class="DeathLog" url="central_feedback.swf" autoPerfTestGroup="logs">
       <properties itemRendererName="[MessageListItemRendererForEventLog]" antiSpam="true" blinkTimer="0" enabled="true" listItemRendererDethTime="0.3" listItemRendererLifeTime="10000" messageBufferLength="2" messageBufferOverflowDeathTime="1" scrollBarStep="1" scrollPosition="left" textDisplayFlow="bottom-up" tweenTime="0.3" tweenListItemRenderer="true"/>
@@ -179,10 +183,18 @@
   <!--  <element name="helpScreen" class="HelpScreenClip" url="help_panel.swf" autoPerfTest="false">
     <properties hitTest='true' />
   </element> -->
-  
-  <element name="navigator" class="NavigatorElement" url="navigator.swf"/>         <element name="ngCrosshair" class="NGCrosshairElement" url="ng_cross.swf"/>         <element name="smokeGeneratorTimer" class="SmokeGeneratorTimerElement" url="smokegenerator_timer.swf"/>         <element name="altHud" class="__ModLoader" url="alt_hud.swf"/>            </elementList>
-    <controllers>    <controller class="com.w03l.alt.battle_controllers.AltHudController" clips="crosshairDefault,crosshairFPS,navigator,ngCrosshair,smokeGeneratorTimer"/>
+  <element name="navigator" class="NavigatorElement" url="navigator.swf"/>      
+   <element name="ngCrosshair" class="NGCrosshairElement" url="ng_cross.swf"/>      
+   <element name="smokeGeneratorTimer" class="SmokeGeneratorTimerElement" url="smokegenerator_timer.swf"/>      
+   <element name="altHud" class="__ModLoader" url="alt_hud.swf"/>          
+  <element name="runningLights" class="__ModLoader" url="running_lights.swf"/>  
+  <element name="runningLights" class="__ModLoader" url="running_lights.swf"/>
+	</elementList>
+  <controllers>
+    <controller class="com.w03l.alt.battle_controllers.AltHudController" clips="crosshairDefault,crosshairFPS,navigator,ngCrosshair,smokeGeneratorTimer"/>
     <controller class="com.w03l.alt.battle_controllers.AltMinimapController" clips="minimapClip"/>
+	<controller class="com.Pr0Ships.battle_controllers.RunningLightsController" clips="markersContainer"/>
+<controller class="com.Pr0Ships.battle_controllers.RunningLightsController" clips="markersContainer"/>
     <controller class="lesta.dialogs.battle_window_controllers.ModulesPanelController" clips="modulesBar"/>
     <controller class="lesta.dialogs.battle_window_controllers.ShipStateController" clips="shipStateBars,shipStateBars.vehicle_hp,shipStateBars.vehicle_hp_text,shipStateBars.ship_name"/>
     <controller class="lesta.dialogs.battle_window_controllers.CruiseController" clips="indicatorSpeed,indicatorAngle"/>
@@ -218,12 +230,13 @@
   <controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundShipsList"/>
     <controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundFogHornIndicator"/>
   <controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundCombatLog"/>
-  <!--<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundHelpHint"/>-->
+    <!--<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundHelpHint"/>-->
   <controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundShipParamsTooltip"/>
   <controller class="lesta.dialogs.battle_window_controllers.StatsPanelController" clips="statsPanel"/>
   <controller  name="quickCommandsController" class="lesta.dialogs.battle_window_controllers.QuickCommandsPanelController" clips="quickCommandsPanel"/>
   <controller name="quickCommandsMiniController" class="lesta.dialogs.battle_window_controllers.QuickCommandsMiniPanelController" clips="quickCommandsPanelMini"/>
-  	<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundInfoPanel"/></controllers>
+  	<controller class="lesta.dialogs.battle_window_controllers.UnboundElementController" clips="unboundInfoPanel"/>
+  </controllers>
   <animation>
 	 <key delay="0" clips="crosshairDefault.cross"/>
     <key delay="10" clips="crosshairDefault.iconDist,crosshairDefault.iconVisibility,crosshairDefault.aimAssistant"/>

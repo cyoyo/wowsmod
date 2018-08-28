@@ -1,0 +1,2437 @@
+<space.ubersettings>
+	<version>	2	</version>
+	<Root>
+		<settings />
+		<General>
+			<settings>
+				<farPlane>
+					<value>	5000.0000	</value>
+				</farPlane>
+			</settings>
+			<Decals>
+				<settings>
+					<fadeStart>
+						<value>	451.0000	</value>
+					</fadeStart>
+					<fadeEnd>
+						<value>	550.0000	</value>
+					</fadeEnd>
+				</settings>
+			</Decals>
+			<LightMapper>
+				<settings>
+					<lightMapShadow>
+						<value>	spaces/17_NA_fault_line/lightmap_shadow.tga	</value>
+					</lightMapShadow>
+					<lightMapAO>
+						<value>	spaces/17_NA_fault_line/lightmap_ao.tga	</value>
+					</lightMapAO>
+					<lightMapIndirection>
+						<value>	spaces/17_NA_fault_line/lightMapIndirection.tga	</value>
+					</lightMapIndirection>
+					<depthBias>
+						<value>	-0.0050	</value>
+					</depthBias>
+					<blurRadius>
+						<value>	2.0000	</value>
+					</blurRadius>
+					<numLightMapBlocksInAtlas>
+						<value>	167.0000 167.0000	</value>
+					</numLightMapBlocksInAtlas>
+					<numLightMapBlocksInSpace>
+						<value>	576.0000 576.0000	</value>
+					</numLightMapBlocksInSpace>
+					<blockBorderAdjust>
+						<value>	334.0000 334.0000	</value>
+					</blockBorderAdjust>
+					<angularSize>
+						<value>	0.5000	</value>
+					</angularSize>
+					<lightMapBias>
+						<value>	0.0050	</value>
+					</lightMapBias>
+					<lightMapQuality>
+						<value>	50	</value>
+					</lightMapQuality>
+				</settings>
+			</LightMapper>
+			<CDLOD>
+				<settings>
+					<rangeScale>
+						<value>	2.0000	</value>
+					</rangeScale>
+					<morphRatio>
+						<value>	0.0300	</value>
+					</morphRatio>
+					<lodDistance>
+						<value>	300.0000	</value>
+					</lodDistance>
+				</settings>
+			</CDLOD>
+			<SeaGeneral>
+				<settings />
+				<Reflection>
+					<settings />
+				</Reflection>
+			</SeaGeneral>
+			<StarrySky>
+				<settings>
+					<starsTexture>
+						<value>	null	</value>
+					</starsTexture>
+					<starsTextureTilesCount>
+						<value>	1.0000	</value>
+					</starsTextureTilesCount>
+				</settings>
+			</StarrySky>
+		</General>
+		<Weather>
+			<settings>
+				<effect>
+					<value>	null	</value>
+				</effect>
+				<uiBrightnessMultiplier>
+					<value>	1.0000	</value>
+				</uiBrightnessMultiplier>
+			</settings>
+			<Fog>
+				<settings>
+					<fogDensityMultiplier>
+						<value>	0.5560	</value>
+					</fogDensityMultiplier>
+					<fogSkyDistanceMultiplier>
+						<value>	100.0000	</value>
+					</fogSkyDistanceMultiplier>
+					<fogDensityHighHeight>
+						<value>	44.7600	</value>
+					</fogDensityHighHeight>
+					<fogDensityHigh>
+						<value>	0.8400	</value>
+					</fogDensityHigh>
+					<fogDensityLow>
+						<value>	0.4950	</value>
+					</fogDensityLow>
+					<fogStart>
+						<value>	5000.0000	</value>
+					</fogStart>
+					<fogColor>
+						<value>	0.1098 0.1412 0.2314 0.7020	</value>
+					</fogColor>
+					<fogCubeLodMin>
+						<value>	7.5700	</value>
+					</fogCubeLodMin>
+					<fogCubeLodMax>
+						<value>	8.4950	</value>
+					</fogCubeLodMax>
+					<fogCubeVerticalScale>
+						<value>	1.0000	</value>
+					</fogCubeVerticalScale>
+					<fogBlurSizeAtFarPlane>
+						<value>	10.0000	</value>
+					</fogBlurSizeAtFarPlane>
+					<fogShipInfluence>
+						<value>	1.0000	</value>
+					</fogShipInfluence>
+				</settings>
+			</Fog>
+			<Wind>
+				<settings>
+					<angles>
+						<value>	3.1416 0.0314	</value>
+					</angles>
+					<anglesDispersion>
+						<value>	0.7854 0.1963	</value>
+					</anglesDispersion>
+					<intensityRange>
+						<value>	0.5000 0.5000	</value>
+					</intensityRange>
+					<dynamicsIntensity>
+						<value>	1.0000	</value>
+					</dynamicsIntensity>
+				</settings>
+			</Wind>
+			<HDR>
+				<settings>
+					<version>
+						<value>	2	</value>
+					</version>
+					<adaptationSpeed>
+						<value>	160.7000	</value>
+					</adaptationSpeed>
+					<avgLumUpdateInterval>
+						<value>	0.1000	</value>
+					</avgLumUpdateInterval>
+				</settings>
+				<Bloom>
+					<settings>
+						<enabled>
+							<value>	true	</value>
+						</enabled>
+						<brightThreshold>
+							<value>	0.1000	</value>
+						</brightThreshold>
+						<overBloom>
+							<value>	5.0000	</value>
+						</overBloom>
+						<factor>
+							<value>	2.0100	</value>
+						</factor>
+						<mipWeight0>
+							<value>	0.2000	</value>
+						</mipWeight0>
+						<mipWeight1>
+							<value>	0.3000	</value>
+						</mipWeight1>
+						<mipWeight2>
+							<value>	0.2400	</value>
+						</mipWeight2>
+						<mipWeight3>
+							<value>	0.1200	</value>
+						</mipWeight3>
+						<mipWeight4>
+							<value>	0.0800	</value>
+						</mipWeight4>
+					</settings>
+				</Bloom>
+				<Tonemapping>
+					<settings>
+						<eyeDarkLimit>
+							<value>	0.4400	</value>
+						</eyeDarkLimit>
+						<eyeLightLimit>
+							<value>	0.9800	</value>
+						</eyeLightLimit>
+						<middleGray>
+							<value>	1.0000	</value>
+						</middleGray>
+						<whitePoint>
+							<value>	5.7500	</value>
+						</whitePoint>
+						<shoulderStrength>
+							<value>	0.3500	</value>
+						</shoulderStrength>
+						<linearStrength>
+							<value>	0.5500	</value>
+						</linearStrength>
+						<linearAngle>
+							<value>	0.1800	</value>
+						</linearAngle>
+						<toeStrength>
+							<value>	0.3300	</value>
+						</toeStrength>
+						<toeNumerator>
+							<value>	0.0300	</value>
+						</toeNumerator>
+						<toeDenominator>
+							<value>	2.0000	</value>
+						</toeDenominator>
+						<filmicOperator>
+							<value>	true	</value>
+						</filmicOperator>
+						<applyToLuminance>
+							<value>	false	</value>
+						</applyToLuminance>
+					</settings>
+				</Tonemapping>
+				<Environment>
+					<settings>
+						<skyLumMultiplier>
+							<value>	4.0000	</value>
+						</skyLumMultiplier>
+						<sunlightLumMultiplier>
+							<value>	4.8000	</value>
+						</sunlightLumMultiplier>
+						<ambientLumMultiplier>
+							<value>	1.5000	</value>
+						</ambientLumMultiplier>
+					</settings>
+				</Environment>
+			</HDR>
+			<PBS>
+				<settings>
+					<REM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Default/REM.dds	</value>
+					</REM>
+					<PMREM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Default/PMREM.dds	</value>
+					</PMREM>
+				</settings>
+				<SphericalHarmonics>
+					<settings>
+						<harmonics>
+							<value>	gqefPnF2yT47XPQ+cVOAPkPqpz7Rw9E+TTT+vP6m3ry+lrK6VysOPuM3Gz4WsBs+9+eePaQErT1zLqk9Jl52vWFqhr2as1m9jq+NOhZ0tzp8vEE7MKBgOweB1zyvcYE969zjPCIY0TxmUp88	</value>
+						</harmonics>
+					</settings>
+				</SphericalHarmonics>
+			</PBS>
+			<PostFX>
+				<settings />
+				<Common>
+					<settings>
+						<colorCorrectIntensity>
+							<value>	0.4000	</value>
+						</colorCorrectIntensity>
+						<colorTintIntensityScreen>
+							<value>	0.0000	</value>
+						</colorTintIntensityScreen>
+						<colorTintIntensityOverbright>
+							<value>	0.0000	</value>
+						</colorTintIntensityOverbright>
+						<lensEnabled>
+							<value>	false	</value>
+						</lensEnabled>
+						<colorCorrectLookupTexture>
+							<value>	system/maps/post_processing/color_correct_bigrace.dds	</value>
+						</colorCorrectLookupTexture>
+					</settings>
+				</Common>
+				<DOF>
+					<settings>
+						<dofFocusDistance>
+							<value>	100.0000	</value>
+						</dofFocusDistance>
+						<dofFocusRange>
+							<value>	100.0000	</value>
+						</dofFocusRange>
+					</settings>
+				</DOF>
+				<ScreenBlur>
+					<settings />
+				</ScreenBlur>
+				<RadialBlur>
+					<settings />
+				</RadialBlur>
+				<LensFlare>
+					<settings>
+						<apertureTexture>
+							<value>	maps\post_processing\lens_flare\aperture.dds	</value>
+						</apertureTexture>
+						<lensColorGradientTexture>
+							<value>	maps\post_processing\lens_flare\lens_color_gradient.dds	</value>
+						</lensColorGradientTexture>
+						<lensDirtTexture>
+							<value>	maps\post_processing\lens_flare\lens_dirt.dds	</value>
+						</lensDirtTexture>
+						<lensStarTexture>
+							<value>	maps\post_processing\lens_flare\lens_star.dds	</value>
+						</lensStarTexture>
+						<sunCoronaTexture>
+							<value>	maps\post_processing\lens_flare\sun_aberration.dds	</value>
+						</sunCoronaTexture>
+						<lensFlareIntensity>
+							<value>	1.6570	</value>
+						</lensFlareIntensity>
+						<sunCoronaSize>
+							<value>	18.3100	</value>
+						</sunCoronaSize>
+						<sunCoronaOpacity>
+							<value>	1.0000	</value>
+						</sunCoronaOpacity>
+						<sunInnerSizeScale>
+							<value>	0.5640	</value>
+						</sunInnerSizeScale>
+						<ghostCount>
+							<value>	4	</value>
+						</ghostCount>
+						<ghostDispersal>
+							<value>	1.1290	</value>
+						</ghostDispersal>
+						<ghostDispersalDecay>
+							<value>	0.6570	</value>
+						</ghostDispersalDecay>
+						<ghostIntensity>
+							<value>	1.6020	</value>
+						</ghostIntensity>
+						<ghostFadePow>
+							<value>	5.7820	</value>
+						</ghostFadePow>
+						<ghostCenterFadeOffset>
+							<value>	0.2030	</value>
+						</ghostCenterFadeOffset>
+						<ghostCenterFadeScale>
+							<value>	257.8000	</value>
+						</ghostCenterFadeScale>
+						<lensColorGradientScale>
+							<value>	0.8240	</value>
+						</lensColorGradientScale>
+						<haloWidth>
+							<value>	0.3700	</value>
+						</haloWidth>
+						<haloIntensity>
+							<value>	1.8630	</value>
+						</haloIntensity>
+						<haloFadePow>
+							<value>	1.0990	</value>
+						</haloFadePow>
+						<haloInnerFadePow>
+							<value>	1.3000	</value>
+						</haloInnerFadePow>
+						<haloCenterFadeOffset>
+							<value>	0.0000	</value>
+						</haloCenterFadeOffset>
+						<haloCenterFadeScale>
+							<value>	0.0000	</value>
+						</haloCenterFadeScale>
+						<chromaticDistortion>
+							<value>	0.0400	</value>
+						</chromaticDistortion>
+						<dirtAmount>
+							<value>	1.5300	</value>
+						</dirtAmount>
+						<dirtFadePow>
+							<value>	15.1600	</value>
+						</dirtFadePow>
+						<dirtOffset>
+							<value>	0.4900	</value>
+						</dirtOffset>
+						<dirtScale>
+							<value>	5.3530	</value>
+						</dirtScale>
+						<starOffset>
+							<value>	0.4450	</value>
+						</starOffset>
+						<starScale>
+							<value>	50.0000	</value>
+						</starScale>
+						<starRotSpeed>
+							<value>	1.9430	</value>
+						</starRotSpeed>
+						<sunCoronaBrightness>
+							<value>	0.7180	</value>
+						</sunCoronaBrightness>
+						<sunCoronaScale>
+							<value>	1.9490	</value>
+						</sunCoronaScale>
+						<sunCoronaRotSpeed>
+							<value>	0.8820	</value>
+						</sunCoronaRotSpeed>
+						<lensFadeOutDist>
+							<value>	-0.1000	</value>
+						</lensFadeOutDist>
+						<sunOcclusionRadiusCoef>
+							<value>	0.2500	</value>
+						</sunOcclusionRadiusCoef>
+					</settings>
+				</LensFlare>
+				<LightShafts>
+					<settings>
+						<maskScreenSpace>
+							<value>	true	</value>
+						</maskScreenSpace>
+						<lightShaftsIntensity>
+							<value>	1.3260	</value>
+						</lightShaftsIntensity>
+						<lightShaftsTintColor>
+							<value>	0.3922 0.2941 0.0039	</value>
+						</lightShaftsTintColor>
+						<fadeStart>
+							<value>	1.8720	</value>
+						</fadeStart>
+						<fadeEnd>
+							<value>	10.0000	</value>
+						</fadeEnd>
+						<fadePow>
+							<value>	10.0000	</value>
+						</fadePow>
+						<decay>
+							<value>	1.0000	</value>
+						</decay>
+						<density>
+							<value>	0.8030	</value>
+						</density>
+						<jitterAmount>
+							<value>	0.6040	</value>
+						</jitterAmount>
+						<blurIntensity>
+							<value>	0.0000	</value>
+						</blurIntensity>
+						<sunLightPow>
+							<value>	57.3900	</value>
+						</sunLightPow>
+						<quality>
+							<value>	2	</value>
+						</quality>
+						<passCount>
+							<value>	2	</value>
+						</passCount>
+						<scaleDensity>
+							<value>	0.8220	</value>
+						</scaleDensity>
+						<disableDecayRestPass>
+							<value>	true	</value>
+						</disableDecayRestPass>
+						<disableJitterLastPass>
+							<value>	true	</value>
+						</disableJitterLastPass>
+					</settings>
+				</LightShafts>
+				<HDRCompose>
+					<settings />
+				</HDRCompose>
+				<Colorblind>
+					<settings />
+				</Colorblind>
+			</PostFX>
+			<Sea>
+				<settings />
+				<Foam>
+					<settings>
+						<foamTextureScale>
+							<value>	0.1000	</value>
+						</foamTextureScale>
+						<shoreDepth>
+							<value>	0.4360	</value>
+						</shoreDepth>
+						<foamOnObjectsClamp>
+							<value>	0.2220	</value>
+						</foamOnObjectsClamp>
+						<shoreFadeFactor>
+							<value>	0.8000	</value>
+						</shoreFadeFactor>
+						<foamDistortionCoef>
+							<value>	0.1500	</value>
+						</foamDistortionCoef>
+						<foamFadeFactor>
+							<value>	1.0000	</value>
+						</foamFadeFactor>
+						<foamSubSurfFactor>
+							<value>	0.4000	</value>
+						</foamSubSurfFactor>
+						<foamSubSurfDepth>
+							<value>	0.5623	</value>
+						</foamSubSurfDepth>
+						<windFoamAddHeight>
+							<value>	0.1624	</value>
+						</windFoamAddHeight>
+					</settings>
+				</Foam>
+				<Optics>
+					<settings>
+						<refrDistortion>
+							<value>	0.1950	</value>
+						</refrDistortion>
+						<reflectionScaleFOV>
+							<value>	1.0000	</value>
+						</reflectionScaleFOV>
+						<waterTransparency>
+							<value>	2.8000	</value>
+						</waterTransparency>
+						<subSurfaceThickness>
+							<value>	2.0000	</value>
+						</subSurfaceThickness>
+						<subSurfaceBrightness>
+							<value>	1.0000	</value>
+						</subSurfaceBrightness>
+						<turbidColor>
+							<value>	0.0000 0.0000 0.0000 0.0000	</value>
+						</turbidColor>
+						<rgbAbsorption>
+							<value>	1.5750 3.3750 4.5000 8.3000	</value>
+						</rgbAbsorption>
+						<sunGlitterIntensity>
+							<value>	0.5000	</value>
+						</sunGlitterIntensity>
+						<sunGlitterGlossiness>
+							<value>	0.6000	</value>
+						</sunGlitterGlossiness>
+					</settings>
+					<SeaShadows>
+						<settings>
+							<seaShadowsVolAttenuation>
+								<value>	0.0000	</value>
+							</seaShadowsVolAttenuation>
+							<seaShadowsVolIntensity>
+								<value>	0.0000	</value>
+							</seaShadowsVolIntensity>
+							<seaShadowsSurfIntensity>
+								<value>	0.8220	</value>
+							</seaShadowsSurfIntensity>
+							<seaShadowsSurfBlurScale>
+								<value>	2.6650	</value>
+							</seaShadowsSurfBlurScale>
+							<seaShadowsDeepBlurScale>
+								<value>	0.2010	</value>
+							</seaShadowsDeepBlurScale>
+						</settings>
+					</SeaShadows>
+				</Optics>
+				<Simulation>
+					<settings>
+						<seaLevel>
+							<value>	0.0000	</value>
+						</seaLevel>
+						<simpleWavesScale>
+							<value>	0.1000	</value>
+						</simpleWavesScale>
+						<simpleWavesSpeed>
+							<value>	0.0610	</value>
+						</simpleWavesSpeed>
+						<simpleWavesAmplitude>
+							<value>	0.4700	</value>
+						</simpleWavesAmplitude>
+						<wavesScales0>
+							<value>	0.1120 1.9100 1.0000 0.2900	</value>
+						</wavesScales0>
+						<wavesScales1>
+							<value>	0.5410 1.1100 1.0000 0.1100	</value>
+						</wavesScales1>
+						<wavesScales2>
+							<value>	7.7100 0.0570 1.0000 -0.0100	</value>
+						</wavesScales2>
+						<simpleWavesWindAngle>
+							<value>	300.0000	</value>
+						</simpleWavesWindAngle>
+					</settings>
+				</Simulation>
+			</Sea>
+			<Sky>
+				<settings />
+				<Sun>
+					<settings>
+						<yaw>
+							<value>	252.3000	</value>
+						</yaw>
+						<pitch>
+							<value>	21.8700	</value>
+						</pitch>
+						<color>
+							<value>	0.9608 0.9608 0.9451 1.0000	</value>
+						</color>
+						<ambient>
+							<value>	0.7569 0.9608 0.9412 1.0000	</value>
+						</ambient>
+					</settings>
+				</Sun>
+				<SunDisk>
+					<settings>
+						<sunTexture>
+							<value>	content/location/sun/sun_alpha_a.tga	</value>
+						</sunTexture>
+						<sunDiskSize>
+							<value>	2.4160	</value>
+						</sunDiskSize>
+						<sunDiskColor>
+							<value>	1.0000 1.0000 1.0000 1.0000	</value>
+						</sunDiskColor>
+						<sunDiskBrightness>
+							<value>	1.0000	</value>
+						</sunDiskBrightness>
+						<sunDiskOpacity>
+							<value>	1.0000	</value>
+						</sunDiskOpacity>
+					</settings>
+				</SunDisk>
+				<SkyDome>
+					<settings>
+						<skyDomeYaw>
+							<value>	0.0000	</value>
+						</skyDomeYaw>
+						<parallax>
+							<value>	0.0100	</value>
+						</parallax>
+						<windSpeed>
+							<value>	0.0350	</value>
+						</windSpeed>
+						<windDir>
+							<value>	-1.0000 -0.1500	</value>
+						</windDir>
+						<scrollDist>
+							<value>	0.1150	</value>
+						</scrollDist>
+						<horizonFactor>
+							<value>	0.4880	</value>
+						</horizonFactor>
+						<distorDistanceFalloff>
+							<value>	1.3120	</value>
+						</distorDistanceFalloff>
+						<skyDomeTexture>
+							<value>	content/location/skybox/textures/17_NA_fault_line_skybox_d.tga	</value>
+						</skyDomeTexture>
+						<cloudsMaskTexture>
+							<value>	null	</value>
+						</cloudsMaskTexture>
+						<starsBrightness>
+							<value>	0.0000	</value>
+						</starsBrightness>
+						<isCIESkyEnabled>
+							<value>	false	</value>
+						</isCIESkyEnabled>
+						<cieSkyType>
+							<value>	1.0000	</value>
+						</cieSkyType>
+						<cieSkyLuminance>
+							<value>	1.0000	</value>
+						</cieSkyLuminance>
+						<cieSkySaturation>
+							<value>	0.8000	</value>
+						</cieSkySaturation>
+						<cieSkyUseLumMask>
+							<value>	1.0000	</value>
+						</cieSkyUseLumMask>
+					</settings>
+				</SkyDome>
+			</Sky>
+		</Weather>
+		<Weather user_name="Storm">
+			<settings>
+				<effect>
+					<value>	sfx/rain_tropical.xml	</value>
+				</effect>
+				<uiBrightnessMultiplier>
+					<value>	1.4500	</value>
+				</uiBrightnessMultiplier>
+			</settings>
+			<Fog>
+				<settings>
+					<fogDensityMultiplier>
+						<value>	0.4500	</value>
+					</fogDensityMultiplier>
+					<fogSkyDistanceMultiplier>
+						<value>	100.0000	</value>
+					</fogSkyDistanceMultiplier>
+					<fogDensityHighHeight>
+						<value>	44.7600	</value>
+					</fogDensityHighHeight>
+					<fogDensityHigh>
+						<value>	0.8400	</value>
+					</fogDensityHigh>
+					<fogDensityLow>
+						<value>	0.4950	</value>
+					</fogDensityLow>
+					<fogStart>
+						<value>	5000.0000	</value>
+					</fogStart>
+					<fogColor>
+						<value>	0.0360 0.0480 0.0600 0.8000	</value>
+					</fogColor>
+					<fogCubeLodMin>
+						<value>	7.5700	</value>
+					</fogCubeLodMin>
+					<fogCubeLodMax>
+						<value>	8.4950	</value>
+					</fogCubeLodMax>
+					<fogCubeVerticalScale>
+						<value>	1.0000	</value>
+					</fogCubeVerticalScale>
+					<fogBlurSizeAtFarPlane>
+						<value>	10.0000	</value>
+					</fogBlurSizeAtFarPlane>
+					<fogShipInfluence>
+						<value>	1.0000	</value>
+					</fogShipInfluence>
+				</settings>
+			</Fog>
+			<Wind>
+				<settings>
+					<angles>
+						<value>	3.1416 0.0314	</value>
+					</angles>
+					<anglesDispersion>
+						<value>	0.7854 0.1963	</value>
+					</anglesDispersion>
+					<intensityRange>
+						<value>	0.5000 0.5000	</value>
+					</intensityRange>
+					<dynamicsIntensity>
+						<value>	1.0000	</value>
+					</dynamicsIntensity>
+				</settings>
+			</Wind>
+			<HDR>
+				<settings>
+					<version>
+						<value>	2	</value>
+					</version>
+					<adaptationSpeed>
+						<value>	160.7000	</value>
+					</adaptationSpeed>
+					<avgLumUpdateInterval>
+						<value>	0.1000	</value>
+					</avgLumUpdateInterval>
+				</settings>
+				<Bloom>
+					<settings>
+						<enabled>
+							<value>	true	</value>
+						</enabled>
+						<brightThreshold>
+							<value>	2.5500	</value>
+						</brightThreshold>
+						<overBloom>
+							<value>	1.5800	</value>
+						</overBloom>
+						<factor>
+							<value>	1.5000	</value>
+						</factor>
+						<mipWeight0>
+							<value>	0.2000	</value>
+						</mipWeight0>
+						<mipWeight1>
+							<value>	0.3000	</value>
+						</mipWeight1>
+						<mipWeight2>
+							<value>	0.2400	</value>
+						</mipWeight2>
+						<mipWeight3>
+							<value>	0.1200	</value>
+						</mipWeight3>
+						<mipWeight4>
+							<value>	0.0800	</value>
+						</mipWeight4>
+					</settings>
+				</Bloom>
+				<Tonemapping>
+					<settings>
+						<eyeDarkLimit>
+							<value>	0.1200	</value>
+						</eyeDarkLimit>
+						<eyeLightLimit>
+							<value>	1.4800	</value>
+						</eyeLightLimit>
+						<middleGray>
+							<value>	0.4100	</value>
+						</middleGray>
+						<whitePoint>
+							<value>	9.1400	</value>
+						</whitePoint>
+						<shoulderStrength>
+							<value>	0.2000	</value>
+						</shoulderStrength>
+						<linearStrength>
+							<value>	1.1000	</value>
+						</linearStrength>
+						<linearAngle>
+							<value>	0.1800	</value>
+						</linearAngle>
+						<toeStrength>
+							<value>	0.3300	</value>
+						</toeStrength>
+						<toeNumerator>
+							<value>	0.0300	</value>
+						</toeNumerator>
+						<toeDenominator>
+							<value>	1.1000	</value>
+						</toeDenominator>
+						<filmicOperator>
+							<value>	true	</value>
+						</filmicOperator>
+						<applyToLuminance>
+							<value>	false	</value>
+						</applyToLuminance>
+					</settings>
+				</Tonemapping>
+				<Environment>
+					<settings>
+						<skyLumMultiplier>
+							<value>	1.0000	</value>
+						</skyLumMultiplier>
+						<sunlightLumMultiplier>
+							<value>	1.0000	</value>
+						</sunlightLumMultiplier>
+						<ambientLumMultiplier>
+							<value>	2.0000	</value>
+						</ambientLumMultiplier>
+					</settings>
+				</Environment>
+			</HDR>
+			<PBS>
+				<settings>
+					<REM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Storm/REM.dds	</value>
+					</REM>
+					<PMREM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Storm/PMREM.dds	</value>
+					</PMREM>
+				</settings>
+				<SphericalHarmonics>
+					<settings>
+						<harmonics>
+							<value>	tryxPfdTsz2Fuaw9SXaXPczElj0IvpI9vnhNPAnJUTxKnFM8vLOFPbLEhD1LwXw9KH7zPPCC9jyyNvM8x1TfO8NM4DvkPt87T8UOvEtSBrwejvq7ZESJPHKkhjz3mYE86owFPDvoBjzqXe87	</value>
+						</harmonics>
+					</settings>
+				</SphericalHarmonics>
+			</PBS>
+			<PostFX>
+				<settings />
+				<Common>
+					<settings>
+						<colorCorrectIntensity>
+							<value>	0.4000	</value>
+						</colorCorrectIntensity>
+						<colorTintIntensityScreen>
+							<value>	0.0000	</value>
+						</colorTintIntensityScreen>
+						<colorTintIntensityOverbright>
+							<value>	0.0000	</value>
+						</colorTintIntensityOverbright>
+						<lensEnabled>
+							<value>	false	</value>
+						</lensEnabled>
+						<colorCorrectLookupTexture>
+							<value>	system/maps/post_processing/color_correct_bigrace.dds	</value>
+						</colorCorrectLookupTexture>
+					</settings>
+				</Common>
+				<DOF>
+					<settings>
+						<dofFocusDistance>
+							<value>	100.0000	</value>
+						</dofFocusDistance>
+						<dofFocusRange>
+							<value>	100.0000	</value>
+						</dofFocusRange>
+					</settings>
+				</DOF>
+				<ScreenBlur>
+					<settings />
+				</ScreenBlur>
+				<RadialBlur>
+					<settings />
+				</RadialBlur>
+				<LensFlare>
+					<settings>
+						<apertureTexture>
+							<value>	maps\post_processing\lens_flare\aperture.dds	</value>
+						</apertureTexture>
+						<lensColorGradientTexture>
+							<value>	maps\post_processing\lens_flare\lens_color_gradient.dds	</value>
+						</lensColorGradientTexture>
+						<lensDirtTexture>
+							<value>	maps\post_processing\lens_flare\lens_dirt.dds	</value>
+						</lensDirtTexture>
+						<lensStarTexture>
+							<value>	maps\post_processing\lens_flare\lens_star.dds	</value>
+						</lensStarTexture>
+						<sunCoronaTexture>
+							<value>	maps\post_processing\lens_flare\sun_aberration.dds	</value>
+						</sunCoronaTexture>
+						<lensFlareIntensity>
+							<value>	1.8420	</value>
+						</lensFlareIntensity>
+						<sunCoronaSize>
+							<value>	18.3100	</value>
+						</sunCoronaSize>
+						<sunCoronaOpacity>
+							<value>	0.0100	</value>
+						</sunCoronaOpacity>
+						<sunInnerSizeScale>
+							<value>	0.5640	</value>
+						</sunInnerSizeScale>
+						<ghostCount>
+							<value>	4	</value>
+						</ghostCount>
+						<ghostDispersal>
+							<value>	1.1290	</value>
+						</ghostDispersal>
+						<ghostDispersalDecay>
+							<value>	0.6570	</value>
+						</ghostDispersalDecay>
+						<ghostIntensity>
+							<value>	1.6020	</value>
+						</ghostIntensity>
+						<ghostFadePow>
+							<value>	5.7820	</value>
+						</ghostFadePow>
+						<ghostCenterFadeOffset>
+							<value>	0.2030	</value>
+						</ghostCenterFadeOffset>
+						<ghostCenterFadeScale>
+							<value>	257.8000	</value>
+						</ghostCenterFadeScale>
+						<lensColorGradientScale>
+							<value>	0.8240	</value>
+						</lensColorGradientScale>
+						<haloWidth>
+							<value>	0.3700	</value>
+						</haloWidth>
+						<haloIntensity>
+							<value>	1.8630	</value>
+						</haloIntensity>
+						<haloFadePow>
+							<value>	1.0990	</value>
+						</haloFadePow>
+						<haloInnerFadePow>
+							<value>	1.3000	</value>
+						</haloInnerFadePow>
+						<haloCenterFadeOffset>
+							<value>	0.0000	</value>
+						</haloCenterFadeOffset>
+						<haloCenterFadeScale>
+							<value>	0.0000	</value>
+						</haloCenterFadeScale>
+						<chromaticDistortion>
+							<value>	0.0400	</value>
+						</chromaticDistortion>
+						<dirtAmount>
+							<value>	0.5500	</value>
+						</dirtAmount>
+						<dirtFadePow>
+							<value>	15.1600	</value>
+						</dirtFadePow>
+						<dirtOffset>
+							<value>	0.4900	</value>
+						</dirtOffset>
+						<dirtScale>
+							<value>	5.3530	</value>
+						</dirtScale>
+						<starOffset>
+							<value>	0.4450	</value>
+						</starOffset>
+						<starScale>
+							<value>	50.0000	</value>
+						</starScale>
+						<starRotSpeed>
+							<value>	1.9430	</value>
+						</starRotSpeed>
+						<sunCoronaBrightness>
+							<value>	0.7180	</value>
+						</sunCoronaBrightness>
+						<sunCoronaScale>
+							<value>	1.9490	</value>
+						</sunCoronaScale>
+						<sunCoronaRotSpeed>
+							<value>	0.8820	</value>
+						</sunCoronaRotSpeed>
+						<lensFadeOutDist>
+							<value>	-0.1000	</value>
+						</lensFadeOutDist>
+						<sunOcclusionRadiusCoef>
+							<value>	0.2500	</value>
+						</sunOcclusionRadiusCoef>
+					</settings>
+				</LensFlare>
+				<LightShafts>
+					<settings>
+						<maskScreenSpace>
+							<value>	true	</value>
+						</maskScreenSpace>
+						<lightShaftsIntensity>
+							<value>	0.7590	</value>
+						</lightShaftsIntensity>
+						<lightShaftsTintColor>
+							<value>	0.2471 0.2157 0.1137	</value>
+						</lightShaftsTintColor>
+						<fadeStart>
+							<value>	1.8720	</value>
+						</fadeStart>
+						<fadeEnd>
+							<value>	10.0000	</value>
+						</fadeEnd>
+						<fadePow>
+							<value>	10.0000	</value>
+						</fadePow>
+						<decay>
+							<value>	1.0000	</value>
+						</decay>
+						<density>
+							<value>	0.8030	</value>
+						</density>
+						<jitterAmount>
+							<value>	0.6040	</value>
+						</jitterAmount>
+						<blurIntensity>
+							<value>	0.0000	</value>
+						</blurIntensity>
+						<sunLightPow>
+							<value>	57.3900	</value>
+						</sunLightPow>
+						<quality>
+							<value>	2	</value>
+						</quality>
+						<passCount>
+							<value>	2	</value>
+						</passCount>
+						<scaleDensity>
+							<value>	0.8220	</value>
+						</scaleDensity>
+						<disableDecayRestPass>
+							<value>	true	</value>
+						</disableDecayRestPass>
+						<disableJitterLastPass>
+							<value>	true	</value>
+						</disableJitterLastPass>
+					</settings>
+				</LightShafts>
+				<HDRCompose>
+					<settings />
+				</HDRCompose>
+				<Colorblind>
+					<settings />
+				</Colorblind>
+			</PostFX>
+			<Sea>
+				<settings />
+				<Foam>
+					<settings>
+						<foamTextureScale>
+							<value>	0.1000	</value>
+						</foamTextureScale>
+						<shoreDepth>
+							<value>	0.3670	</value>
+						</shoreDepth>
+						<foamOnObjectsClamp>
+							<value>	0.2220	</value>
+						</foamOnObjectsClamp>
+						<shoreFadeFactor>
+							<value>	0.8000	</value>
+						</shoreFadeFactor>
+						<foamDistortionCoef>
+							<value>	0.1500	</value>
+						</foamDistortionCoef>
+						<foamFadeFactor>
+							<value>	1.0000	</value>
+						</foamFadeFactor>
+						<foamSubSurfFactor>
+							<value>	0.4000	</value>
+						</foamSubSurfFactor>
+						<foamSubSurfDepth>
+							<value>	0.8047	</value>
+						</foamSubSurfDepth>
+						<windFoamAddHeight>
+							<value>	0.1360	</value>
+						</windFoamAddHeight>
+					</settings>
+				</Foam>
+				<Optics>
+					<settings>
+						<refrDistortion>
+							<value>	0.1950	</value>
+						</refrDistortion>
+						<reflectionScaleFOV>
+							<value>	1.0000	</value>
+						</reflectionScaleFOV>
+						<waterTransparency>
+							<value>	2.5000	</value>
+						</waterTransparency>
+						<subSurfaceThickness>
+							<value>	2.4270	</value>
+						</subSurfaceThickness>
+						<subSurfaceBrightness>
+							<value>	1.0000	</value>
+						</subSurfaceBrightness>
+						<turbidColor>
+							<value>	0.0209 0.0177 0.0400 0.1100	</value>
+						</turbidColor>
+						<rgbAbsorption>
+							<value>	2.0125 4.3125 5.7500 8.3000	</value>
+						</rgbAbsorption>
+						<sunGlitterIntensity>
+							<value>	0.0710	</value>
+						</sunGlitterIntensity>
+						<sunGlitterGlossiness>
+							<value>	0.1260	</value>
+						</sunGlitterGlossiness>
+					</settings>
+					<SeaShadows>
+						<settings>
+							<seaShadowsVolAttenuation>
+								<value>	0.0000	</value>
+							</seaShadowsVolAttenuation>
+							<seaShadowsVolIntensity>
+								<value>	0.0000	</value>
+							</seaShadowsVolIntensity>
+							<seaShadowsSurfIntensity>
+								<value>	0.3500	</value>
+							</seaShadowsSurfIntensity>
+							<seaShadowsSurfBlurScale>
+								<value>	2.6650	</value>
+							</seaShadowsSurfBlurScale>
+							<seaShadowsDeepBlurScale>
+								<value>	0.2010	</value>
+							</seaShadowsDeepBlurScale>
+						</settings>
+					</SeaShadows>
+				</Optics>
+				<Simulation>
+					<settings>
+						<seaLevel>
+							<value>	0.0000	</value>
+						</seaLevel>
+						<simpleWavesScale>
+							<value>	0.1000	</value>
+						</simpleWavesScale>
+						<simpleWavesSpeed>
+							<value>	0.0610	</value>
+						</simpleWavesSpeed>
+						<simpleWavesAmplitude>
+							<value>	0.6300	</value>
+						</simpleWavesAmplitude>
+						<wavesScales0>
+							<value>	0.1120 1.9100 1.0000 0.2900	</value>
+						</wavesScales0>
+						<wavesScales1>
+							<value>	0.5410 1.1100 1.0000 0.1100	</value>
+						</wavesScales1>
+						<wavesScales2>
+							<value>	7.7100 0.0570 1.0000 -0.0100	</value>
+						</wavesScales2>
+						<simpleWavesWindAngle>
+							<value>	300.0000	</value>
+						</simpleWavesWindAngle>
+					</settings>
+				</Simulation>
+			</Sea>
+			<Sky>
+				<settings />
+				<Sun>
+					<settings>
+						<yaw>
+							<value>	252.3000	</value>
+						</yaw>
+						<pitch>
+							<value>	21.8700	</value>
+						</pitch>
+						<color>
+							<value>	0.9647 0.8392 0.7176 1.0000	</value>
+						</color>
+						<ambient>
+							<value>	0.1608 0.2784 0.4078 1.0000	</value>
+						</ambient>
+					</settings>
+				</Sun>
+				<SunDisk>
+					<settings>
+						<sunTexture>
+							<value>	content/location/sun/sun_alpha_a.tga	</value>
+						</sunTexture>
+						<sunDiskSize>
+							<value>	2.4160	</value>
+						</sunDiskSize>
+						<sunDiskColor>
+							<value>	1.0000 1.0000 1.0000 1.0000	</value>
+						</sunDiskColor>
+						<sunDiskBrightness>
+							<value>	1.0000	</value>
+						</sunDiskBrightness>
+						<sunDiskOpacity>
+							<value>	0.0000	</value>
+						</sunDiskOpacity>
+					</settings>
+				</SunDisk>
+				<SkyDome>
+					<settings>
+						<skyDomeYaw>
+							<value>	98.7300	</value>
+						</skyDomeYaw>
+						<parallax>
+							<value>	0.0100	</value>
+						</parallax>
+						<windSpeed>
+							<value>	0.0350	</value>
+						</windSpeed>
+						<windDir>
+							<value>	-1.0000 -0.1500	</value>
+						</windDir>
+						<scrollDist>
+							<value>	0.1150	</value>
+						</scrollDist>
+						<horizonFactor>
+							<value>	0.4880	</value>
+						</horizonFactor>
+						<distorDistanceFalloff>
+							<value>	1.3120	</value>
+						</distorDistanceFalloff>
+						<skyDomeTexture>
+							<value>	content/location/skybox/textures/17_NA_fault_line_skybox_storm_d.tga	</value>
+						</skyDomeTexture>
+						<cloudsMaskTexture>
+							<value>	null	</value>
+						</cloudsMaskTexture>
+						<starsBrightness>
+							<value>	0.0000	</value>
+						</starsBrightness>
+						<isCIESkyEnabled>
+							<value>	true	</value>
+						</isCIESkyEnabled>
+						<cieSkyType>
+							<value>	2.0000	</value>
+						</cieSkyType>
+						<cieSkyLuminance>
+							<value>	0.5000	</value>
+						</cieSkyLuminance>
+						<cieSkySaturation>
+							<value>	0.8000	</value>
+						</cieSkySaturation>
+						<cieSkyUseLumMask>
+							<value>	1.0000	</value>
+						</cieSkyUseLumMask>
+					</settings>
+				</SkyDome>
+			</Sky>
+		</Weather>
+		<Weather user_name="Cloudy">
+			<settings>
+				<effect>
+					<value>	null	</value>
+				</effect>
+				<uiBrightnessMultiplier>
+					<value>	6.0000	</value>
+				</uiBrightnessMultiplier>
+			</settings>
+			<Fog>
+				<settings>
+					<fogDensityMultiplier>
+						<value>	0.3500	</value>
+					</fogDensityMultiplier>
+					<fogSkyDistanceMultiplier>
+						<value>	70.3900	</value>
+					</fogSkyDistanceMultiplier>
+					<fogDensityHighHeight>
+						<value>	44.7600	</value>
+					</fogDensityHighHeight>
+					<fogDensityHigh>
+						<value>	0.8400	</value>
+					</fogDensityHigh>
+					<fogDensityLow>
+						<value>	0.6080	</value>
+					</fogDensityLow>
+					<fogStart>
+						<value>	5000.0000	</value>
+					</fogStart>
+					<fogColor>
+						<value>	0.1098 0.1412 0.2314 0.7020	</value>
+					</fogColor>
+					<fogCubeLodMin>
+						<value>	7.5700	</value>
+					</fogCubeLodMin>
+					<fogCubeLodMax>
+						<value>	8.4950	</value>
+					</fogCubeLodMax>
+					<fogCubeVerticalScale>
+						<value>	1.0000	</value>
+					</fogCubeVerticalScale>
+					<fogBlurSizeAtFarPlane>
+						<value>	10.0000	</value>
+					</fogBlurSizeAtFarPlane>
+					<fogShipInfluence>
+						<value>	1.0000	</value>
+					</fogShipInfluence>
+				</settings>
+			</Fog>
+			<Wind>
+				<settings>
+					<angles>
+						<value>	3.1416 0.0314	</value>
+					</angles>
+					<anglesDispersion>
+						<value>	0.7854 0.1963	</value>
+					</anglesDispersion>
+					<intensityRange>
+						<value>	0.5000 0.5000	</value>
+					</intensityRange>
+					<dynamicsIntensity>
+						<value>	1.0000	</value>
+					</dynamicsIntensity>
+				</settings>
+			</Wind>
+			<HDR>
+				<settings>
+					<version>
+						<value>	2	</value>
+					</version>
+					<adaptationSpeed>
+						<value>	160.7000	</value>
+					</adaptationSpeed>
+					<avgLumUpdateInterval>
+						<value>	0.1000	</value>
+					</avgLumUpdateInterval>
+				</settings>
+				<Bloom>
+					<settings>
+						<enabled>
+							<value>	true	</value>
+						</enabled>
+						<brightThreshold>
+							<value>	1.0000	</value>
+						</brightThreshold>
+						<overBloom>
+							<value>	3.0000	</value>
+						</overBloom>
+						<factor>
+							<value>	0.7000	</value>
+						</factor>
+						<mipWeight0>
+							<value>	0.1000	</value>
+						</mipWeight0>
+						<mipWeight1>
+							<value>	0.2000	</value>
+						</mipWeight1>
+						<mipWeight2>
+							<value>	0.1100	</value>
+						</mipWeight2>
+						<mipWeight3>
+							<value>	0.0800	</value>
+						</mipWeight3>
+						<mipWeight4>
+							<value>	0.0400	</value>
+						</mipWeight4>
+					</settings>
+				</Bloom>
+				<Tonemapping>
+					<settings>
+						<eyeDarkLimit>
+							<value>	0.2000	</value>
+						</eyeDarkLimit>
+						<eyeLightLimit>
+							<value>	2.5100	</value>
+						</eyeLightLimit>
+						<middleGray>
+							<value>	0.9100	</value>
+						</middleGray>
+						<whitePoint>
+							<value>	9.5100	</value>
+						</whitePoint>
+						<shoulderStrength>
+							<value>	0.1700	</value>
+						</shoulderStrength>
+						<linearStrength>
+							<value>	1.5000	</value>
+						</linearStrength>
+						<linearAngle>
+							<value>	0.1000	</value>
+						</linearAngle>
+						<toeStrength>
+							<value>	0.5100	</value>
+						</toeStrength>
+						<toeNumerator>
+							<value>	0.0100	</value>
+						</toeNumerator>
+						<toeDenominator>
+							<value>	1.3000	</value>
+						</toeDenominator>
+						<filmicOperator>
+							<value>	true	</value>
+						</filmicOperator>
+						<applyToLuminance>
+							<value>	false	</value>
+						</applyToLuminance>
+					</settings>
+				</Tonemapping>
+				<Environment>
+					<settings>
+						<skyLumMultiplier>
+							<value>	4.0000	</value>
+						</skyLumMultiplier>
+						<sunlightLumMultiplier>
+							<value>	3.5000	</value>
+						</sunlightLumMultiplier>
+						<ambientLumMultiplier>
+							<value>	1.5000	</value>
+						</ambientLumMultiplier>
+					</settings>
+				</Environment>
+			</HDR>
+			<PBS>
+				<settings>
+					<REM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Cloudy/REM.dds	</value>
+					</REM>
+					<PMREM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Cloudy/PMREM.dds	</value>
+					</PMREM>
+				</settings>
+				<SphericalHarmonics>
+					<settings>
+						<harmonics>
+							<value>	BRr9PjNnHD9a1Do/n/PKPqMJAj+C5CA/uAE5u+3NrzxDVZ89vqDAPgfu2z40h+w+qoVUPvKvdT5m5YQ+5tt6vUvXWb152Zq8QQD2vB6aDr31UxW9+NeTPNdrZj1jye49q/yHPZH7hD0sPV49	</value>
+						</harmonics>
+					</settings>
+				</SphericalHarmonics>
+			</PBS>
+			<PostFX>
+				<settings />
+				<Common>
+					<settings>
+						<colorCorrectIntensity>
+							<value>	0.4000	</value>
+						</colorCorrectIntensity>
+						<colorTintIntensityScreen>
+							<value>	0.0000	</value>
+						</colorTintIntensityScreen>
+						<colorTintIntensityOverbright>
+							<value>	0.0000	</value>
+						</colorTintIntensityOverbright>
+						<lensEnabled>
+							<value>	false	</value>
+						</lensEnabled>
+						<colorCorrectLookupTexture>
+							<value>	system/maps/post_processing/color_correct_bigrace.dds	</value>
+						</colorCorrectLookupTexture>
+					</settings>
+				</Common>
+				<DOF>
+					<settings>
+						<dofFocusDistance>
+							<value>	100.0000	</value>
+						</dofFocusDistance>
+						<dofFocusRange>
+							<value>	100.0000	</value>
+						</dofFocusRange>
+					</settings>
+				</DOF>
+				<ScreenBlur>
+					<settings />
+				</ScreenBlur>
+				<RadialBlur>
+					<settings />
+				</RadialBlur>
+				<LensFlare>
+					<settings>
+						<apertureTexture>
+							<value>	maps\post_processing\lens_flare\aperture.dds	</value>
+						</apertureTexture>
+						<lensColorGradientTexture>
+							<value>	maps\post_processing\lens_flare\lens_color_gradient.dds	</value>
+						</lensColorGradientTexture>
+						<lensDirtTexture>
+							<value>	maps\post_processing\lens_flare\lens_dirt.dds	</value>
+						</lensDirtTexture>
+						<lensStarTexture>
+							<value>	maps\post_processing\lens_flare\lens_star.dds	</value>
+						</lensStarTexture>
+						<sunCoronaTexture>
+							<value>	maps\post_processing\lens_flare\sun_aberration.dds	</value>
+						</sunCoronaTexture>
+						<lensFlareIntensity>
+							<value>	1.6570	</value>
+						</lensFlareIntensity>
+						<sunCoronaSize>
+							<value>	18.3100	</value>
+						</sunCoronaSize>
+						<sunCoronaOpacity>
+							<value>	1.0000	</value>
+						</sunCoronaOpacity>
+						<sunInnerSizeScale>
+							<value>	0.5640	</value>
+						</sunInnerSizeScale>
+						<ghostCount>
+							<value>	4	</value>
+						</ghostCount>
+						<ghostDispersal>
+							<value>	1.1290	</value>
+						</ghostDispersal>
+						<ghostDispersalDecay>
+							<value>	0.6570	</value>
+						</ghostDispersalDecay>
+						<ghostIntensity>
+							<value>	1.6020	</value>
+						</ghostIntensity>
+						<ghostFadePow>
+							<value>	5.7820	</value>
+						</ghostFadePow>
+						<ghostCenterFadeOffset>
+							<value>	0.2030	</value>
+						</ghostCenterFadeOffset>
+						<ghostCenterFadeScale>
+							<value>	257.8000	</value>
+						</ghostCenterFadeScale>
+						<lensColorGradientScale>
+							<value>	0.8240	</value>
+						</lensColorGradientScale>
+						<haloWidth>
+							<value>	0.3700	</value>
+						</haloWidth>
+						<haloIntensity>
+							<value>	1.8630	</value>
+						</haloIntensity>
+						<haloFadePow>
+							<value>	1.0990	</value>
+						</haloFadePow>
+						<haloInnerFadePow>
+							<value>	1.3000	</value>
+						</haloInnerFadePow>
+						<haloCenterFadeOffset>
+							<value>	0.0000	</value>
+						</haloCenterFadeOffset>
+						<haloCenterFadeScale>
+							<value>	0.0000	</value>
+						</haloCenterFadeScale>
+						<chromaticDistortion>
+							<value>	0.0400	</value>
+						</chromaticDistortion>
+						<dirtAmount>
+							<value>	1.5300	</value>
+						</dirtAmount>
+						<dirtFadePow>
+							<value>	15.1600	</value>
+						</dirtFadePow>
+						<dirtOffset>
+							<value>	0.4900	</value>
+						</dirtOffset>
+						<dirtScale>
+							<value>	5.3530	</value>
+						</dirtScale>
+						<starOffset>
+							<value>	0.4450	</value>
+						</starOffset>
+						<starScale>
+							<value>	50.0000	</value>
+						</starScale>
+						<starRotSpeed>
+							<value>	1.9430	</value>
+						</starRotSpeed>
+						<sunCoronaBrightness>
+							<value>	0.7180	</value>
+						</sunCoronaBrightness>
+						<sunCoronaScale>
+							<value>	1.9490	</value>
+						</sunCoronaScale>
+						<sunCoronaRotSpeed>
+							<value>	0.8820	</value>
+						</sunCoronaRotSpeed>
+						<lensFadeOutDist>
+							<value>	-0.1000	</value>
+						</lensFadeOutDist>
+						<sunOcclusionRadiusCoef>
+							<value>	0.2500	</value>
+						</sunOcclusionRadiusCoef>
+					</settings>
+				</LensFlare>
+				<LightShafts>
+					<settings>
+						<maskScreenSpace>
+							<value>	true	</value>
+						</maskScreenSpace>
+						<lightShaftsIntensity>
+							<value>	0.8550	</value>
+						</lightShaftsIntensity>
+						<lightShaftsTintColor>
+							<value>	0.3922 0.2941 0.0039	</value>
+						</lightShaftsTintColor>
+						<fadeStart>
+							<value>	1.8720	</value>
+						</fadeStart>
+						<fadeEnd>
+							<value>	10.0000	</value>
+						</fadeEnd>
+						<fadePow>
+							<value>	10.0000	</value>
+						</fadePow>
+						<decay>
+							<value>	1.0000	</value>
+						</decay>
+						<density>
+							<value>	0.8030	</value>
+						</density>
+						<jitterAmount>
+							<value>	0.6040	</value>
+						</jitterAmount>
+						<blurIntensity>
+							<value>	0.0000	</value>
+						</blurIntensity>
+						<sunLightPow>
+							<value>	57.3900	</value>
+						</sunLightPow>
+						<quality>
+							<value>	2	</value>
+						</quality>
+						<passCount>
+							<value>	2	</value>
+						</passCount>
+						<scaleDensity>
+							<value>	0.8220	</value>
+						</scaleDensity>
+						<disableDecayRestPass>
+							<value>	true	</value>
+						</disableDecayRestPass>
+						<disableJitterLastPass>
+							<value>	true	</value>
+						</disableJitterLastPass>
+					</settings>
+				</LightShafts>
+				<HDRCompose>
+					<settings />
+				</HDRCompose>
+				<Colorblind>
+					<settings />
+				</Colorblind>
+			</PostFX>
+			<Sea>
+				<settings />
+				<Foam>
+					<settings>
+						<foamTextureScale>
+							<value>	0.1000	</value>
+						</foamTextureScale>
+						<shoreDepth>
+							<value>	0.4360	</value>
+						</shoreDepth>
+						<foamOnObjectsClamp>
+							<value>	0.2220	</value>
+						</foamOnObjectsClamp>
+						<shoreFadeFactor>
+							<value>	0.8000	</value>
+						</shoreFadeFactor>
+						<foamDistortionCoef>
+							<value>	0.1500	</value>
+						</foamDistortionCoef>
+						<foamFadeFactor>
+							<value>	1.0000	</value>
+						</foamFadeFactor>
+						<foamSubSurfFactor>
+							<value>	0.4000	</value>
+						</foamSubSurfFactor>
+						<foamSubSurfDepth>
+							<value>	0.5935	</value>
+						</foamSubSurfDepth>
+						<windFoamAddHeight>
+							<value>	0.1360	</value>
+						</windFoamAddHeight>
+					</settings>
+				</Foam>
+				<Optics>
+					<settings>
+						<refrDistortion>
+							<value>	0.1950	</value>
+						</refrDistortion>
+						<reflectionScaleFOV>
+							<value>	1.0000	</value>
+						</reflectionScaleFOV>
+						<waterTransparency>
+							<value>	2.8000	</value>
+						</waterTransparency>
+						<subSurfaceThickness>
+							<value>	2.0710	</value>
+						</subSurfaceThickness>
+						<subSurfaceBrightness>
+							<value>	1.0000	</value>
+						</subSurfaceBrightness>
+						<turbidColor>
+							<value>	0.0320 0.0275 0.0588 0.3500	</value>
+						</turbidColor>
+						<rgbAbsorption>
+							<value>	1.6625 3.5625 4.7500 8.3000	</value>
+						</rgbAbsorption>
+						<sunGlitterIntensity>
+							<value>	0.1280	</value>
+						</sunGlitterIntensity>
+						<sunGlitterGlossiness>
+							<value>	0.9000	</value>
+						</sunGlitterGlossiness>
+					</settings>
+					<SeaShadows>
+						<settings>
+							<seaShadowsVolAttenuation>
+								<value>	0.0000	</value>
+							</seaShadowsVolAttenuation>
+							<seaShadowsVolIntensity>
+								<value>	0.0000	</value>
+							</seaShadowsVolIntensity>
+							<seaShadowsSurfIntensity>
+								<value>	0.8220	</value>
+							</seaShadowsSurfIntensity>
+							<seaShadowsSurfBlurScale>
+								<value>	2.6650	</value>
+							</seaShadowsSurfBlurScale>
+							<seaShadowsDeepBlurScale>
+								<value>	0.2010	</value>
+							</seaShadowsDeepBlurScale>
+						</settings>
+					</SeaShadows>
+				</Optics>
+				<Simulation>
+					<settings>
+						<seaLevel>
+							<value>	0.0000	</value>
+						</seaLevel>
+						<simpleWavesScale>
+							<value>	0.1000	</value>
+						</simpleWavesScale>
+						<simpleWavesSpeed>
+							<value>	0.0610	</value>
+						</simpleWavesSpeed>
+						<simpleWavesAmplitude>
+							<value>	0.4700	</value>
+						</simpleWavesAmplitude>
+						<wavesScales0>
+							<value>	0.1120 1.9100 1.0000 0.2900	</value>
+						</wavesScales0>
+						<wavesScales1>
+							<value>	0.5410 1.1100 1.0000 0.1100	</value>
+						</wavesScales1>
+						<wavesScales2>
+							<value>	7.7100 0.0570 1.0000 -0.0100	</value>
+						</wavesScales2>
+						<simpleWavesWindAngle>
+							<value>	300.0000	</value>
+						</simpleWavesWindAngle>
+					</settings>
+				</Simulation>
+			</Sea>
+			<Sky>
+				<settings />
+				<Sun>
+					<settings>
+						<yaw>
+							<value>	252.3000	</value>
+						</yaw>
+						<pitch>
+							<value>	21.8700	</value>
+						</pitch>
+						<color>
+							<value>	0.9608 0.9608 0.9451 1.0000	</value>
+						</color>
+						<ambient>
+							<value>	0.7569 0.9608 0.9412 1.0000	</value>
+						</ambient>
+					</settings>
+				</Sun>
+				<SunDisk>
+					<settings>
+						<sunTexture>
+							<value>	content/location/sun/sun_alpha_a.tga	</value>
+						</sunTexture>
+						<sunDiskSize>
+							<value>	2.4160	</value>
+						</sunDiskSize>
+						<sunDiskColor>
+							<value>	1.0000 1.0000 1.0000 1.0000	</value>
+						</sunDiskColor>
+						<sunDiskBrightness>
+							<value>	7.0000	</value>
+						</sunDiskBrightness>
+						<sunDiskOpacity>
+							<value>	1.0000	</value>
+						</sunDiskOpacity>
+					</settings>
+				</SunDisk>
+				<SkyDome>
+					<settings>
+						<skyDomeYaw>
+							<value>	0.0000	</value>
+						</skyDomeYaw>
+						<parallax>
+							<value>	0.0100	</value>
+						</parallax>
+						<windSpeed>
+							<value>	0.0350	</value>
+						</windSpeed>
+						<windDir>
+							<value>	-1.0000 -0.1500	</value>
+						</windDir>
+						<scrollDist>
+							<value>	0.1150	</value>
+						</scrollDist>
+						<horizonFactor>
+							<value>	0.4880	</value>
+						</horizonFactor>
+						<distorDistanceFalloff>
+							<value>	1.3120	</value>
+						</distorDistanceFalloff>
+						<skyDomeTexture>
+							<value>	content/location/skybox/textures/17_NA_fault_line_skybox_d.tga	</value>
+						</skyDomeTexture>
+						<cloudsMaskTexture>
+							<value>	null	</value>
+						</cloudsMaskTexture>
+						<starsBrightness>
+							<value>	0.0000	</value>
+						</starsBrightness>
+						<isCIESkyEnabled>
+							<value>	true	</value>
+						</isCIESkyEnabled>
+						<cieSkyType>
+							<value>	2.0000	</value>
+						</cieSkyType>
+						<cieSkyLuminance>
+							<value>	1.5000	</value>
+						</cieSkyLuminance>
+						<cieSkySaturation>
+							<value>	0.8000	</value>
+						</cieSkySaturation>
+						<cieSkyUseLumMask>
+							<value>	1.0000	</value>
+						</cieSkyUseLumMask>
+					</settings>
+				</SkyDome>
+			</Sky>
+		</Weather>
+		<Weather user_name="Evening">
+			<settings>
+				<effect>
+					<value>	null	</value>
+				</effect>
+				<uiBrightnessMultiplier>
+					<value>	2.0000	</value>
+				</uiBrightnessMultiplier>
+			</settings>
+			<Fog>
+				<settings>
+					<fogDensityMultiplier>
+						<value>	0.3850	</value>
+					</fogDensityMultiplier>
+					<fogSkyDistanceMultiplier>
+						<value>	51.4900	</value>
+					</fogSkyDistanceMultiplier>
+					<fogDensityHighHeight>
+						<value>	54.8200	</value>
+					</fogDensityHighHeight>
+					<fogDensityHigh>
+						<value>	0.8940	</value>
+					</fogDensityHigh>
+					<fogDensityLow>
+						<value>	0.1000	</value>
+					</fogDensityLow>
+					<fogStart>
+						<value>	5000.0000	</value>
+					</fogStart>
+					<fogColor>
+						<value>	0.0706 0.0863 0.1059 0.7647	</value>
+					</fogColor>
+					<fogCubeLodMin>
+						<value>	4.9500	</value>
+					</fogCubeLodMin>
+					<fogCubeLodMax>
+						<value>	8.1450	</value>
+					</fogCubeLodMax>
+					<fogCubeVerticalScale>
+						<value>	3.7600	</value>
+					</fogCubeVerticalScale>
+					<fogBlurSizeAtFarPlane>
+						<value>	9.7000	</value>
+					</fogBlurSizeAtFarPlane>
+					<fogShipInfluence>
+						<value>	1.0000	</value>
+					</fogShipInfluence>
+				</settings>
+			</Fog>
+			<Wind>
+				<settings>
+					<angles>
+						<value>	3.1416 0.0314	</value>
+					</angles>
+					<anglesDispersion>
+						<value>	0.7854 0.1963	</value>
+					</anglesDispersion>
+					<intensityRange>
+						<value>	0.5000 0.5000	</value>
+					</intensityRange>
+					<dynamicsIntensity>
+						<value>	1.0000	</value>
+					</dynamicsIntensity>
+				</settings>
+			</Wind>
+			<HDR>
+				<settings>
+					<version>
+						<value>	2	</value>
+					</version>
+					<adaptationSpeed>
+						<value>	160.7000	</value>
+					</adaptationSpeed>
+					<avgLumUpdateInterval>
+						<value>	0.1000	</value>
+					</avgLumUpdateInterval>
+				</settings>
+				<Bloom>
+					<settings>
+						<enabled>
+							<value>	true	</value>
+						</enabled>
+						<brightThreshold>
+							<value>	0.5200	</value>
+						</brightThreshold>
+						<overBloom>
+							<value>	4.0000	</value>
+						</overBloom>
+						<factor>
+							<value>	0.5700	</value>
+						</factor>
+						<mipWeight0>
+							<value>	0.1000	</value>
+						</mipWeight0>
+						<mipWeight1>
+							<value>	0.2000	</value>
+						</mipWeight1>
+						<mipWeight2>
+							<value>	0.1100	</value>
+						</mipWeight2>
+						<mipWeight3>
+							<value>	0.0800	</value>
+						</mipWeight3>
+						<mipWeight4>
+							<value>	0.0400	</value>
+						</mipWeight4>
+					</settings>
+				</Bloom>
+				<Tonemapping>
+					<settings>
+						<eyeDarkLimit>
+							<value>	0.1500	</value>
+						</eyeDarkLimit>
+						<eyeLightLimit>
+							<value>	1.4100	</value>
+						</eyeLightLimit>
+						<middleGray>
+							<value>	0.4500	</value>
+						</middleGray>
+						<whitePoint>
+							<value>	10.0000	</value>
+						</whitePoint>
+						<shoulderStrength>
+							<value>	0.2500	</value>
+						</shoulderStrength>
+						<linearStrength>
+							<value>	0.7500	</value>
+						</linearStrength>
+						<linearAngle>
+							<value>	0.2500	</value>
+						</linearAngle>
+						<toeStrength>
+							<value>	0.3000	</value>
+						</toeStrength>
+						<toeNumerator>
+							<value>	0.0100	</value>
+						</toeNumerator>
+						<toeDenominator>
+							<value>	1.2500	</value>
+						</toeDenominator>
+						<filmicOperator>
+							<value>	true	</value>
+						</filmicOperator>
+						<applyToLuminance>
+							<value>	false	</value>
+						</applyToLuminance>
+					</settings>
+				</Tonemapping>
+				<Environment>
+					<settings>
+						<skyLumMultiplier>
+							<value>	4.0000	</value>
+						</skyLumMultiplier>
+						<sunlightLumMultiplier>
+							<value>	3.5000	</value>
+						</sunlightLumMultiplier>
+						<ambientLumMultiplier>
+							<value>	1.5000	</value>
+						</ambientLumMultiplier>
+					</settings>
+				</Environment>
+			</HDR>
+			<PBS>
+				<settings>
+					<REM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Evening/REM.dds	</value>
+					</REM>
+					<PMREM>
+						<value>	content/location/skybox/17_NA_fault_line/lightcube/Evening/PMREM.dds	</value>
+					</PMREM>
+				</settings>
+				<SphericalHarmonics>
+					<settings>
+						<harmonics>
+							<value>	0DMDPrXdDj5RmVg+9Ih5Pev/tD1EPzc+/4oNPQHT4zwrptQ8ioDrPfkdwD0BgrA9lcGKPEH0qDxQUQk9zquuO1e41jtixCw8oXT+u6Pv5LtOexi8VtwfPWec7TxSYdA8XAohPQmL4DyZECk8	</value>
+						</harmonics>
+					</settings>
+				</SphericalHarmonics>
+			</PBS>
+			<PostFX>
+				<settings />
+				<Common>
+					<settings>
+						<colorCorrectIntensity>
+							<value>	0.4000	</value>
+						</colorCorrectIntensity>
+						<colorTintIntensityScreen>
+							<value>	0.0000	</value>
+						</colorTintIntensityScreen>
+						<colorTintIntensityOverbright>
+							<value>	0.0000	</value>
+						</colorTintIntensityOverbright>
+						<lensEnabled>
+							<value>	false	</value>
+						</lensEnabled>
+						<colorCorrectLookupTexture>
+							<value>	system/maps/post_processing/color_correct_bigrace.dds	</value>
+						</colorCorrectLookupTexture>
+					</settings>
+				</Common>
+				<DOF>
+					<settings>
+						<dofFocusDistance>
+							<value>	100.0000	</value>
+						</dofFocusDistance>
+						<dofFocusRange>
+							<value>	100.0000	</value>
+						</dofFocusRange>
+					</settings>
+				</DOF>
+				<ScreenBlur>
+					<settings />
+				</ScreenBlur>
+				<RadialBlur>
+					<settings />
+				</RadialBlur>
+				<LensFlare>
+					<settings>
+						<apertureTexture>
+							<value>	maps\post_processing\lens_flare\aperture.dds	</value>
+						</apertureTexture>
+						<lensColorGradientTexture>
+							<value>	maps\post_processing\lens_flare\lens_color_gradient.dds	</value>
+						</lensColorGradientTexture>
+						<lensDirtTexture>
+							<value>	maps\post_processing\lens_flare\lens_dirt.dds	</value>
+						</lensDirtTexture>
+						<lensStarTexture>
+							<value>	maps\post_processing\lens_flare\lens_star.dds	</value>
+						</lensStarTexture>
+						<sunCoronaTexture>
+							<value>	maps\post_processing\lens_flare\sun_aberration.dds	</value>
+						</sunCoronaTexture>
+						<lensFlareIntensity>
+							<value>	0.0000	</value>
+						</lensFlareIntensity>
+						<sunCoronaSize>
+							<value>	6.2910	</value>
+						</sunCoronaSize>
+						<sunCoronaOpacity>
+							<value>	1.0000	</value>
+						</sunCoronaOpacity>
+						<sunInnerSizeScale>
+							<value>	0.5640	</value>
+						</sunInnerSizeScale>
+						<ghostCount>
+							<value>	4	</value>
+						</ghostCount>
+						<ghostDispersal>
+							<value>	1.1290	</value>
+						</ghostDispersal>
+						<ghostDispersalDecay>
+							<value>	0.6570	</value>
+						</ghostDispersalDecay>
+						<ghostIntensity>
+							<value>	1.6020	</value>
+						</ghostIntensity>
+						<ghostFadePow>
+							<value>	5.7820	</value>
+						</ghostFadePow>
+						<ghostCenterFadeOffset>
+							<value>	0.2030	</value>
+						</ghostCenterFadeOffset>
+						<ghostCenterFadeScale>
+							<value>	257.8000	</value>
+						</ghostCenterFadeScale>
+						<lensColorGradientScale>
+							<value>	0.8240	</value>
+						</lensColorGradientScale>
+						<haloWidth>
+							<value>	0.3700	</value>
+						</haloWidth>
+						<haloIntensity>
+							<value>	1.8630	</value>
+						</haloIntensity>
+						<haloFadePow>
+							<value>	1.0990	</value>
+						</haloFadePow>
+						<haloInnerFadePow>
+							<value>	1.3000	</value>
+						</haloInnerFadePow>
+						<haloCenterFadeOffset>
+							<value>	0.0000	</value>
+						</haloCenterFadeOffset>
+						<haloCenterFadeScale>
+							<value>	0.0000	</value>
+						</haloCenterFadeScale>
+						<chromaticDistortion>
+							<value>	0.0400	</value>
+						</chromaticDistortion>
+						<dirtAmount>
+							<value>	1.5300	</value>
+						</dirtAmount>
+						<dirtFadePow>
+							<value>	15.1600	</value>
+						</dirtFadePow>
+						<dirtOffset>
+							<value>	0.4900	</value>
+						</dirtOffset>
+						<dirtScale>
+							<value>	5.3530	</value>
+						</dirtScale>
+						<starOffset>
+							<value>	0.4450	</value>
+						</starOffset>
+						<starScale>
+							<value>	50.0000	</value>
+						</starScale>
+						<starRotSpeed>
+							<value>	1.9430	</value>
+						</starRotSpeed>
+						<sunCoronaBrightness>
+							<value>	0.7180	</value>
+						</sunCoronaBrightness>
+						<sunCoronaScale>
+							<value>	1.9490	</value>
+						</sunCoronaScale>
+						<sunCoronaRotSpeed>
+							<value>	0.8820	</value>
+						</sunCoronaRotSpeed>
+						<lensFadeOutDist>
+							<value>	-0.1000	</value>
+						</lensFadeOutDist>
+						<sunOcclusionRadiusCoef>
+							<value>	0.2500	</value>
+						</sunOcclusionRadiusCoef>
+					</settings>
+				</LensFlare>
+				<LightShafts>
+					<settings>
+						<maskScreenSpace>
+							<value>	true	</value>
+						</maskScreenSpace>
+						<lightShaftsIntensity>
+							<value>	0.0630	</value>
+						</lightShaftsIntensity>
+						<lightShaftsTintColor>
+							<value>	0.3922 0.2941 0.0039	</value>
+						</lightShaftsTintColor>
+						<fadeStart>
+							<value>	1.8720	</value>
+						</fadeStart>
+						<fadeEnd>
+							<value>	10.0000	</value>
+						</fadeEnd>
+						<fadePow>
+							<value>	10.0000	</value>
+						</fadePow>
+						<decay>
+							<value>	1.0000	</value>
+						</decay>
+						<density>
+							<value>	0.8030	</value>
+						</density>
+						<jitterAmount>
+							<value>	0.6040	</value>
+						</jitterAmount>
+						<blurIntensity>
+							<value>	0.0000	</value>
+						</blurIntensity>
+						<sunLightPow>
+							<value>	57.3900	</value>
+						</sunLightPow>
+						<quality>
+							<value>	2	</value>
+						</quality>
+						<passCount>
+							<value>	2	</value>
+						</passCount>
+						<scaleDensity>
+							<value>	0.8220	</value>
+						</scaleDensity>
+						<disableDecayRestPass>
+							<value>	true	</value>
+						</disableDecayRestPass>
+						<disableJitterLastPass>
+							<value>	true	</value>
+						</disableJitterLastPass>
+					</settings>
+				</LightShafts>
+				<HDRCompose>
+					<settings />
+				</HDRCompose>
+				<Colorblind>
+					<settings />
+				</Colorblind>
+			</PostFX>
+			<Sea>
+				<settings />
+				<Foam>
+					<settings>
+						<foamTextureScale>
+							<value>	0.1000	</value>
+						</foamTextureScale>
+						<shoreDepth>
+							<value>	0.4360	</value>
+						</shoreDepth>
+						<foamOnObjectsClamp>
+							<value>	0.2220	</value>
+						</foamOnObjectsClamp>
+						<shoreFadeFactor>
+							<value>	0.8000	</value>
+						</shoreFadeFactor>
+						<foamDistortionCoef>
+							<value>	0.1500	</value>
+						</foamDistortionCoef>
+						<foamFadeFactor>
+							<value>	1.0000	</value>
+						</foamFadeFactor>
+						<foamSubSurfFactor>
+							<value>	0.4000	</value>
+						</foamSubSurfFactor>
+						<foamSubSurfDepth>
+							<value>	0.5935	</value>
+						</foamSubSurfDepth>
+						<windFoamAddHeight>
+							<value>	0.1520	</value>
+						</windFoamAddHeight>
+					</settings>
+				</Foam>
+				<Optics>
+					<settings>
+						<refrDistortion>
+							<value>	0.1950	</value>
+						</refrDistortion>
+						<reflectionScaleFOV>
+							<value>	1.0000	</value>
+						</reflectionScaleFOV>
+						<waterTransparency>
+							<value>	2.8000	</value>
+						</waterTransparency>
+						<subSurfaceThickness>
+							<value>	2.2630	</value>
+						</subSurfaceThickness>
+						<subSurfaceBrightness>
+							<value>	1.0000	</value>
+						</subSurfaceBrightness>
+						<turbidColor>
+							<value>	0.0275 0.0297 0.0588 0.1000	</value>
+						</turbidColor>
+						<rgbAbsorption>
+							<value>	1.6625 3.5625 4.7500 8.3000	</value>
+						</rgbAbsorption>
+						<sunGlitterIntensity>
+							<value>	0.0880	</value>
+						</sunGlitterIntensity>
+						<sunGlitterGlossiness>
+							<value>	0.0710	</value>
+						</sunGlitterGlossiness>
+					</settings>
+					<SeaShadows>
+						<settings>
+							<seaShadowsVolAttenuation>
+								<value>	0.0000	</value>
+							</seaShadowsVolAttenuation>
+							<seaShadowsVolIntensity>
+								<value>	0.0000	</value>
+							</seaShadowsVolIntensity>
+							<seaShadowsSurfIntensity>
+								<value>	0.8220	</value>
+							</seaShadowsSurfIntensity>
+							<seaShadowsSurfBlurScale>
+								<value>	2.6650	</value>
+							</seaShadowsSurfBlurScale>
+							<seaShadowsDeepBlurScale>
+								<value>	0.2010	</value>
+							</seaShadowsDeepBlurScale>
+						</settings>
+					</SeaShadows>
+				</Optics>
+				<Simulation>
+					<settings>
+						<seaLevel>
+							<value>	0.0000	</value>
+						</seaLevel>
+						<simpleWavesScale>
+							<value>	0.1000	</value>
+						</simpleWavesScale>
+						<simpleWavesSpeed>
+							<value>	0.0610	</value>
+						</simpleWavesSpeed>
+						<simpleWavesAmplitude>
+							<value>	0.4700	</value>
+						</simpleWavesAmplitude>
+						<wavesScales0>
+							<value>	0.1120 1.9100 1.0000 0.2900	</value>
+						</wavesScales0>
+						<wavesScales1>
+							<value>	0.5410 1.1100 1.0000 0.1100	</value>
+						</wavesScales1>
+						<wavesScales2>
+							<value>	7.7100 0.0570 1.0000 -0.0100	</value>
+						</wavesScales2>
+						<simpleWavesWindAngle>
+							<value>	300.0000	</value>
+						</simpleWavesWindAngle>
+					</settings>
+				</Simulation>
+			</Sea>
+			<Sky>
+				<settings />
+				<Sun>
+					<settings>
+						<yaw>
+							<value>	252.3000	</value>
+						</yaw>
+						<pitch>
+							<value>	21.8700	</value>
+						</pitch>
+						<color>
+							<value>	0.6745 0.5569 0.4706 1.0000	</value>
+						</color>
+						<ambient>
+							<value>	0.7569 0.9608 0.9412 1.0000	</value>
+						</ambient>
+					</settings>
+				</Sun>
+				<SunDisk>
+					<settings>
+						<sunTexture>
+							<value>	content/location/sun/sun_alpha_a.tga	</value>
+						</sunTexture>
+						<sunDiskSize>
+							<value>	2.4160	</value>
+						</sunDiskSize>
+						<sunDiskColor>
+							<value>	1.0000 1.0000 1.0000 1.0000	</value>
+						</sunDiskColor>
+						<sunDiskBrightness>
+							<value>	1.0000	</value>
+						</sunDiskBrightness>
+						<sunDiskOpacity>
+							<value>	0.0000	</value>
+						</sunDiskOpacity>
+					</settings>
+				</SunDisk>
+				<SkyDome>
+					<settings>
+						<skyDomeYaw>
+							<value>	106.2000	</value>
+						</skyDomeYaw>
+						<parallax>
+							<value>	0.0100	</value>
+						</parallax>
+						<windSpeed>
+							<value>	0.0350	</value>
+						</windSpeed>
+						<windDir>
+							<value>	-1.0000 -0.1500	</value>
+						</windDir>
+						<scrollDist>
+							<value>	0.1150	</value>
+						</scrollDist>
+						<horizonFactor>
+							<value>	0.4880	</value>
+						</horizonFactor>
+						<distorDistanceFalloff>
+							<value>	1.3120	</value>
+						</distorDistanceFalloff>
+						<skyDomeTexture>
+							<value>	content/location/skybox/textures/17_NA_fault_line_skybox_evening_d.tga	</value>
+						</skyDomeTexture>
+						<cloudsMaskTexture>
+							<value>	null	</value>
+						</cloudsMaskTexture>
+						<starsBrightness>
+							<value>	0.0000	</value>
+						</starsBrightness>
+						<isCIESkyEnabled>
+							<value>	true	</value>
+						</isCIESkyEnabled>
+						<cieSkyType>
+							<value>	2.0000	</value>
+						</cieSkyType>
+						<cieSkyLuminance>
+							<value>	1.5000	</value>
+						</cieSkyLuminance>
+						<cieSkySaturation>
+							<value>	0.8000	</value>
+						</cieSkySaturation>
+						<cieSkyUseLumMask>
+							<value>	1.0000	</value>
+						</cieSkyUseLumMask>
+					</settings>
+				</SkyDome>
+			</Sky>
+		</Weather>
+	</Root>
+</space.ubersettings>

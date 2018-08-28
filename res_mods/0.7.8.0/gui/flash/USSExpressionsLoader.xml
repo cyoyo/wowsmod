@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <data>
-	<expressions_files>		<file path="..\unbound\flash\AdjustablePanels.swf"/>		<file path="..\unbound\flash\ext_fonts.swf"/>		<file path="..\unbound\flash\InfoPanel.swf"/>
+	<expressions_files>
+		<file path="..\unbound\flash\AdjustablePanels.swf"/>
+		<file path="..\unbound\flash\ext_fonts.swf"/>
+		<file path="..\unbound\flash\InfoPanel.swf"/>
+		<file path="..\unbound\flash\ArnakTree.swf"/>
 		<file path="USSExpressions.swf" /> <!-- DO NOT REMOVE / НЕ УДАЛЯТЬ -->
 	</expressions_files>
 </data>
