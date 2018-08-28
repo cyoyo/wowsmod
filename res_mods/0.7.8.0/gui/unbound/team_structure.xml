@@ -1,0 +1,1620 @@
+<!-- BADoBEST Adjustable_Panels -->
+<ui>
+	<css name="$FontColorIsIgnored">
+		<textColor value="0x000000"/>
+	</css>
+<!-- ======================================================= Adjustable_Panels ================================================ -->	
+	<block className="TeamStructure">
+		<bind name="controller" value="lesta.dialogs.battle_window_controllers.uss_controllers.ControllerBattleStats"/>
+		<bind name="controller" value="lesta.dialogs.controllers.EntitySingletonController; 'gameInfo'"/>
+		<bind name="controller" value="lesta.dialogs.controllers.EntitySingletonController; 'slimClientData'"/>
+		<bind name="firstEntityDH" value="'prefs'; CC.prefsMarker"/>
+		<bind name="watchDH" value="'earsConfigEnabled'; ['prefs.prefsBattle.evUpdate']; prefs.prefsBattle.enableEars"/>
+		<bind name="watch" value="'enableEars';	(earsConfigEnabled &amp;&amp;
+								(gameInfo.battleType != BattleTypes.INTRO_MISSION) &amp;&amp;
+								(gameInfo.battleType != BattleTypes.PVE_BATTLE))"/>
+		<bind name="watch" value="'isDynamicDivisionsEnabled'; (((gameInfo.battleType == BattleTypes.COOPERATIVE_BATTLE) || (gameInfo.battleType == BattleTypes.RANDOM_BATTLE)) &amp;&amp;
+												slimClientData.isFull)"/>
+		<block>
+			<styleClass value="$Fullsize"/>
+			<bind name="instance" value="'EarsContent'; enableEars ? {_selfPlayer: selfPlayer, _isDynamicDivisionsEnabled: isDynamicDivisionsEnabled} : null"/>
+		</block>
+		<bind name="instance" value="'PanelSettings';{userPrefs:userPrefs}"/>
+		<bind name="instance" value="'BBClock';{userPrefs:userPrefs}"/>
+		<block className="button_settings_small" type="native">
+			<bind name="watch" value=" 'showSettingsBox'; (userPrefs.elementsGroupExpand.showSettingsBox == null) ? false : userPrefs.elementsGroupExpand.showSettingsBox "/>
+            <bind name="catch" value="'switchSettingsBox'; { showSettingsBox: !showSettingsBox }; 'saveshowSettingsBox'"/>
+            <bind name="action" value="'saveshowSettingsBox' ; 'setUserPref' ; {value: showSettingsBox, name: 'elementsGroupExpand', subName: 'showSettingsBox'}"/>
+			<bind name="dispatch" value="'click'; 'switchSettingsBox'"/>
+			<style>
+				<left value="150px"/>
+				<top value="5px"/>
+				<position value="absolute"/>
+			</style>
+		</block>		
+	</block>
+	<block className="PanelSettings">
+        <bind name="visible" value="showSettingsBox"/>
+        <bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+        <bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+        <bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+        <bind name="draggableWindow" value="'SBDragZone'; 'IMPosition'; 'SB'"/>
+        <bind name="watch" value="'SBPositionX'; (userPrefs.IMPositionX.SB == null)  ? ((stageSize.x / 2) - 200) :  userPrefs.IMPositionX.SB"/>
+        <bind name="watch" value="'SBPositionY'; (userPrefs.IMPositionY.SB == null)  ? ((stageSize.y / 2) - 100) :  userPrefs.IMPositionY.SB"/>
+        <bind name="left" value="SBPositionX"/>
+        <bind name="top" value="SBPositionY"/>
+        <bind name="watch" value=" 'showSettingsBox'; (userPrefs.elementsGroupExpand.showSettingsBox == null) ? false : userPrefs.elementsGroupExpand.showSettingsBox "/>
+        <bind name="catch" value="'switchSettingsBox'; { showSettingsBox: !showSettingsBox }; 'saveshowSettingsBox'"/>
+        <bind name="action" value="'saveshowSettingsBox' ; 'setUserPref' ; {value: showSettingsBox, name: 'elementsGroupExpand', subName: 'showSettingsBox'}"/>
+        <bind name="appear" value="'addedToStage'; 0.6; 0; {alpha: 0}; {alpha: 1}"/>		
+        <style>
+            <position value="absolute"/>
+            <backgroundColor value="0x33001000"/>
+        </style>
+        <bind name="instance" value="'DropShadow'; {}"/>
+        <block className="contrast_panel" type="native">
+			<styleClass value="$FullsizeAbsolute"/>
+			<bind name="visible" value="true"/>
+			<style>
+				<marginTop value="-2px"/>
+				<marginBottom value="-2px"/>
+			</style>
+		</block>
+        <block> 
+            <style>
+                <marginBottom value="5px"/>
+                <marginTop value="5px"/>
+                <marginRight value="5px"/>
+                <marginLeft value="10px"/>
+            </style>
+            <block>
+                <block type="text">                    
+					<text value="Настройки"/>
+                    <styleClass value="$TextDefault"/>
+                    <style>
+						<width value="350px"/>
+                        <fontSize value="18"/>						
+                    </style>
+					<bind name="text" value="Lang=='1' ? 'Настройки' : 'Settings'"/>
+                </block>
+				<block className="Lang">
+					<style>
+						<marginLeft value="0px"/>
+						<marginTop value="0px"/>
+						<marginBottom value="0px"/>
+					</style>
+					<bind name="watch" value="'Lang'; (userPrefs.chatBoxWidth.Lang == null)? 1 : userPrefs.chatBoxWidth.Lang"/>
+					<bind name="catch" value="'switchLang'"/>
+					<bind name="changeDispatch" value="Lang; 'saveLang'"/>				
+					<bind name="action" value="'saveLang' ; 'setUserPref' ; {value: Lang, name: 'chatBoxWidth', subName: 'Lang'}"/>								
+					<block className="tab_bar_bg" type="native">
+                        <style>
+                            <widthByChildren value="true"/>
+                            <heightByChildren value="true"/>
+                        </style>
+                        <block>
+                            <style>
+                                <marginLeft value="2px"/>
+                                <marginRight value="2px"/>										
+                                <flow value="horizontal"/>
+                            </style>
+                            <block className="MainTabSmall">
+                                <block className="tab_bar_item_small" type="native">
+                                    <style>
+                                        <width value="30px"/>
+                                        <height value="25px"/>
+                                    </style>
+                                    <bind name="selected" value="Lang == 1"/>
+                                    <bind name="dispatch" value="'buttonClick'; 'switchLang'; {Lang: 1}"/>
+                                    <bind name="label" value="'РУС'"/>
+                                </block>
+                            </block>
+                            <block className="MainTabSmall">
+                                <block className="tab_bar_item_small" type="native">
+                                    <style>
+                                        <width value="30px"/>
+                                        <height value="25px"/>
+                                    </style>
+                                    <bind name="selected" value="Lang == 2"/>
+                                    <bind name="dispatch" value="'buttonClick'; 'switchLang'; {Lang: 2}"/>
+                                    <bind name="label" value="'ENG'"/>
+                                </block>
+                            </block>									
+						</block>
+					</block>
+				</block>	
+                <block>
+                    <style>
+                        <position value="absolute"/>
+                        <right value="5px"/>
+                        <marginTop value="5px"/>
+                    </style>
+                    <block className="button_close" type="native">
+                        <bind name="dispatch" value="'click'; 'switchSettingsBox'"/>
+                    </block>
+                </block>
+                <style>
+                    <width value="460px"/>
+					<flow value="horizontal"/>
+                </style>
+                <params>
+                    <param name="name" value="SBDragZone"/>
+                </params>
+            </block>
+			<block className="HorizontalDivider">
+				<styleClass value="$PxHorizontalCorrection"/>
+				<style>
+					<width value="100%"/>
+					<height value="3px"/>
+				</style>
+				<block className="divider_h" type="native">
+					<styleClass value="$Fullsize"/>
+				</block>
+				<style>
+					<backgroundColor value="0xffffff"/>
+				</style>
+			</block>           			
+            <block className="SettingsList">
+                <style>
+                    <marginRight value="5px"/>
+                    <marginLeft value="0px"/>
+                    <flow value="horizontal"/>
+                </style>               
+                <block className="LeftSettingColumn">
+                    <style>
+                        <width value="230"/>
+                    </style>                   
+                    <block className="EarsSettings">
+                        
+                        <block>
+                            <styleClass value="$Fullsize"/>
+                            <style>
+                                <marginBottom value="8px"/>
+                            </style>
+                        </block>                  
+                        <block className="showPanels">
+                            <style>
+                                <scaleX value="0.75"/>
+                                <scaleY value="0.75"/>
+                            </style>
+                            <bind name="watch" value="'showPanels'; (userPrefs.elementsGroupExpand.showPanels == null) ? true : userPrefs.elementsGroupExpand.showPanels "/>
+                            <bind name="catch" value="'switchshowPanels'; { showPanels: !showPanels }; 'saveshowPanels'"/>
+                            <bind name="action" value="'saveshowPanels' ; 'setUserPref' ; {value: showPanels, name: 'elementsGroupExpand', subName: 'showPanels'}"/>                            
+                            <bind name="instance" value="'CheckBox'; {switchProperty: showPanels, label: (Lang=='1' ? 'Отображать панели' : 'Show Panels'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowPanels'"/>
+                        </block>
+						<block className="showKilled">
+                            <style>
+                                <scaleX value="0.75"/>
+                                <scaleY value="0.75"/>
+                            </style>
+                            <bind name="watch" value="'showKilled'; (userPrefs.elementsGroupExpand.showKilled == null) ? true : userPrefs.elementsGroupExpand.showKilled "/>
+                            <bind name="catch" value="'switchshowKilled'; { showKilled: !showKilled }; 'saveshowKilled'"/>
+                            <bind name="action" value="'saveshowKilled' ; 'setUserPref' ; {value: showKilled, name: 'elementsGroupExpand', subName: 'showKilled'}"/>                            
+                            <bind name="instance" value="'CheckBox'; {switchProperty: showKilled, label: (Lang=='1' ? 'Отображать убитых' : 'Show killed'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowKilled'"/>
+                        </block>													                         
+						<block className="showIcons">
+                            <bind name="watch" value=" 'showIcons'; (userPrefs.elementsGroupExpand.showIcons == null) ? false : userPrefs.elementsGroupExpand.showIcons "/>
+                            <bind name="catch" value="'switchshowIconsBox'; { showIcons: !showIcons }; 'saveshowIcons'"/>
+                            <bind name="action" value="'saveshowIcons' ; 'setUserPref' ; {value: showIcons, name: 'elementsGroupExpand', subName: 'showIcons'}"/>                            
+                            <bind name="instance" value="'CheckBox'; {switchProperty: showIcons, label: (Lang=='1' ? 'Иконки кораблей' : 'Ship Icons'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowIconsBox'"/>
+                        </block>
+						<block className="customIcons">
+							<bind name="style" value="'alpha'; showIcons ? 1 : 0"/>
+							<style>
+								<marginLeft value="0px"/>
+                                <marginTop value="0px"/>
+                                <marginBottom value="0px"/>
+                            </style>
+							<bind name="watch" value="'customIcons'; (userPrefs.chatBoxWidth.customIcons == null)? 0 : userPrefs.chatBoxWidth.customIcons"/>
+                            <bind name="catch" value="'switchcustomIcons'"/>
+							<bind name="changeDispatch" value="customIcons; 'savecustomIcons'"/>				
+                            <bind name="action" value="'savecustomIcons' ; 'setUserPref' ; {value: customIcons, name: 'chatBoxWidth', subName: 'customIcons'}"/>
+                            <block className="tab_bar_bg" type="native">
+                                <style>
+                                    <widthByChildren value="true"/>
+                                    <heightByChildren value="true"/>
+                                </style>
+                                <block>
+                                    <style>
+                                        <marginLeft value="2px"/>
+                                        <marginRight value="2px"/>										
+                                        <flow value="horizontal"/>
+                                    </style>
+                                    <block className="MainTabSmall">
+                                        <block className="tab_bar_item_small" type="native">
+                                            <style>
+                                                <width value="90px"/>
+                                                <height value="25px"/>
+                                            </style>
+                                            <bind name="selected" value="customIcons == 0"/>
+                                            <bind name="dispatch" value="'buttonClick'; 'switchcustomIcons'; {customIcons: 0}"/>
+                                            <bind name="label" value="'WoWs'"/>
+                                        </block>
+                                    </block>
+                                    <block className="MainTabSmall">
+                                        <block className="tab_bar_item_small" type="native">
+                                            <style>
+                                                <width value="90px"/>
+                                                <height value="25px"/>
+                                            </style>
+                                            <bind name="selected" value="customIcons == 1"/>
+                                            <bind name="dispatch" value="'buttonClick'; 'switchcustomIcons'; {customIcons: 1}"/>
+                                            <bind name="label" value="(Lang=='1' ? 'Авторские' : 'Custom')"/>
+                                        </block>
+                                    </block>																	
+								</block>
+							</block>
+						</block>						
+						<block className="showShipNames">
+						    <bind name="watch" value="'showShipNames'; (userPrefs.elementsGroupExpand.showShipNames == null) ? true : userPrefs.elementsGroupExpand.showShipNames"/>
+                            <bind name="catch" value="'switchshowShipNamesBox'; { showShipNames: !showShipNames }; 'saveshowShipNames'"/>
+							<bind name="action" value="'saveshowShipNames' ; 'setUserPref' ; {value: showShipNames, name: 'elementsGroupExpand', subName: 'showShipNames'}"/>
+							<bind name="instance" value="'CheckBox'; {switchProperty: showShipNames, label: (Lang=='1' ? 'Названия кораблей' : 'Ship names'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowShipNamesBox'"/>
+                        </block>
+						<block className="showNickNames">
+						    <bind name="watch" value="'showNickNames'; (userPrefs.elementsGroupExpand.showNickNames == null) ? false : userPrefs.elementsGroupExpand.showNickNames"/>
+                            <bind name="catch" value="'switchshowNickNamesBox'; { showNickNames: !showNickNames }; 'saveshowNickNames'"/>
+							<bind name="action" value="'saveshowNickNames' ; 'setUserPref' ; {value: showNickNames, name: 'elementsGroupExpand', subName: 'showNickNames'}"/>
+							<bind name="instance" value="'CheckBox'; {switchProperty: showNickNames, label: (Lang=='1' ? 'Ники игроков' : 'Players names'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowNickNamesBox'"/>
+                        </block>                      
+						<block className="showLevel">
+                            <bind name="watch" value="'showLevel'; (userPrefs.elementsGroupExpand.showLevel == null) ? true : userPrefs.elementsGroupExpand.showLevel "/>
+                            <bind name="catch" value="'switchshowLevel'; { showLevel: !showLevel }; 'saveshowLevel'"/>
+                            <bind name="action" value="'saveshowLevel' ; 'setUserPref' ; {value: showLevel, name: 'elementsGroupExpand', subName: 'showLevel'}"/>                            
+                            <bind name="instance" value="'CheckBox'; {switchProperty: showLevel, label: (Lang=='1' ? 'Уровень кораблей' : 'Ship levels'), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowLevel'"/>
+                        </block>						
+						<block className="showLamp"> 
+                            <bind name="watch" value=" 'showLamp'; (userPrefs.elementsGroupExpand.showLamp == null) ? true : userPrefs.elementsGroupExpand.showLamp "/>
+                            <bind name="catch" value="'switchshowLampBox'; { showLamp: !showLamp }; 'saveshowLamp'"/>
+                            <bind name="action" value="'saveshowLamp' ; 'setUserPref' ; {value: showLamp, name: 'elementsGroupExpand', subName: 'showLamp'}"/>                            
+                            <bind name="instance" value="'CheckBox'; {switchProperty: showLamp, label: (Lang=='1' ? 'Лампа обнаружения' : 'Detector lamp '), _maxTfWidth: 250}"/>
+                            <bind name="dispatch" value="'click'; 'switchshowLampBox'"/>
+                        </block>
+						<block className="showParams">
+							<bind name="watch" value="'showParams'; (userPrefs.elementsGroupExpand.showParams == null) ? false : userPrefs.elementsGroupExpand.showParams "/>
+							<bind name="catch" value="'switchshowParams'; { showParams: !showParams }; 'saveshowParams'"/>
+							<bind name="action" value="'saveshowParams' ; 'setUserPref' ; {value: showParams, name: 'elementsGroupExpand', subName: 'showParams'}"/>                            
+							<bind name="instance" value="'CheckBox'; {switchProperty: showParams, label: (Lang=='1' ? 'ТТХ ' : 'Ship info'), _maxTfWidth: 250}"/>
+							<bind name="dispatch" value="'click'; 'switchshowParams'"/>
+						</block>
+						<block className="clockEnabled">
+							<bind name="watch" value="'clockEnabled'; (userPrefs.elementsGroupExpand.clockEnabled == null) ? true : userPrefs.elementsGroupExpand.clockEnabled "/>
+							<bind name="catch" value="'switchclockEnabled'; { clockEnabled: !clockEnabled }; 'saveclockEnabled'"/>
+							<bind name="action" value="'saveclockEnabled' ; 'setUserPref' ; {value: clockEnabled, name: 'elementsGroupExpand', subName: 'clockEnabled'}"/>                            
+							<bind name="instance" value="'CheckBox'; {switchProperty: clockEnabled, label: (Lang=='1' ? 'Отображать часы' : 'Show clock'), _maxTfWidth: 250}"/>
+							<bind name="dispatch" value="'click'; 'switchclockEnabled'"/>
+						</block>
+						<block className="whiteShipNames">
+							<bind name="watch" value="'whiteShipNames'; (userPrefs.elementsGroupExpand.whiteShipNames == null) ? true : userPrefs.elementsGroupExpand.whiteShipNames "/>
+							<bind name="catch" value="'switchwhiteShipNames'; { whiteShipNames: !whiteShipNames }; 'savewhiteShipNames'"/>
+							<bind name="action" value="'savewhiteShipNames' ; 'setUserPref' ; {value: whiteShipNames, name: 'elementsGroupExpand', subName: 'whiteShipNames'}"/>                            
+							<bind name="instance" value="'CheckBox'; {switchProperty: whiteShipNames, label: (Lang=='1' ? 'Белые названия кораблей' : 'White ship names'), _maxTfWidth: 250}"/>
+							<bind name="dispatch" value="'click'; 'switchwhiteShipNames'"/>
+						</block>
+						<block className="showClanIcon">
+							<bind name="watch" value="'showClanIcon'; (userPrefs.elementsGroupExpand.showClanIcon == null) ? true : userPrefs.elementsGroupExpand.showClanIcon "/>
+							<bind name="catch" value="'switchshowClanIcon'; { showClanIcon: !showClanIcon }; 'saveshowClanIcon'"/>
+							<bind name="action" value="'saveshowClanIcon' ; 'setUserPref' ; {value: showClanIcon, name: 'elementsGroupExpand', subName: 'showClanIcon'}"/>                            
+							<bind name="instance" value="'CheckBox'; {switchProperty: showClanIcon, label: (Lang=='1' ? 'Клановая иконка' : 'Clan Icon'), _maxTfWidth: 250}"/>
+							<bind name="dispatch" value="'click'; 'switchshowClanIcon'"/>
+						</block>
+					</block>
+				</block>			
+				<block className="VerticalDivider">
+					<style>
+						<height value="100%"/>
+						<width value="3px"/>
+					</style>
+					<block className="divider_v" type="native">
+						<styleClass value="$Fullsize"/>
+					</block>
+				</block>
+				<block className="RightSettingColumn">
+                    <style>
+                        <width value="230px"/>
+                        <marginLeft value="15"/>
+                    </style>
+					<block className="scalePanels">
+						<style>
+							<height value="45px"/>
+							<marginLeft value="0px"/>
+                            <marginTop value="0px"/>
+                            <marginBottom value="0px"/>
+                          </style>
+						<bind name="watch" value="'scalePanels'; ((userPrefs.chatBoxWidth.scalePanels == null) || (userPrefs.chatBoxWidth.scalePanels &lt; 0.8) || (userPrefs.chatBoxWidth.scalePanels &gt; 1.3))? 0.85 : userPrefs.chatBoxWidth.scalePanels"/>
+                        <bind name="catch" value="'switchscalePanels'"/>				
+                        <bind name="action" value="'switchscalePanels' ; 'setUserPref' ; {value: scalePanels, name: 'chatBoxWidth', subName: 'scalePanels'}"/>							
+						<block className="slider_default" type="native">
+							<styleClass value="$FullsizeAbsolute"/>
+                               <bind name="enabled" value="true"/>
+                               <bind name="focusable" value="true"/>
+                               <bind name="value" value="'0.85'"/>			
+                               <bind name="minimum" value="'0.8'"/>			
+                               <bind name="maximum" value="'1.3'"/>			
+                               <bind name="snapping" value="false"/>																						
+                               <bind name="snapInterval" value="'0.1'"/>																																	
+                               <bind name="liveDragging" value="true"/>																																											
+                               <bind name="visible" value="true"/>										
+							<bind name="sync" value="'value'; 'valueChange'; scalePanels; 'switchscalePanels'"/>
+							<style>
+								<width value="200px"/>
+								<marginTop value="25px"/>
+                            </style>
+						</block>
+						<block type="text">
+							<styleClass value="$TextDefault"/>
+							<style>
+								<fontSize value="16"/>
+								<marginTop value="0px"/>
+							</style>
+							<bind name="text" value="(Lang=='1' ? 'Масштаб панелей' : 'Panels scale')"/>							
+						</block>	
+					</block>
+					<block className="showClasses">
+                        <bind name="watch" value="'showClasses'; (userPrefs.elementsGroupExpand.showClasses == null) ? true : userPrefs.elementsGroupExpand.showClasses "/>
+                        <bind name="catch" value="'switchshowClasses'; { showClasses: !showClasses }; 'saveshowClasses'"/>
+                        <bind name="action" value="'saveshowClasses' ; 'setUserPref' ; {value: showClasses, name: 'elementsGroupExpand', subName: 'showClasses'}"/>                            
+                        <bind name="instance" value="'CheckBox'; {switchProperty: showClasses, label: (Lang=='1' ? 'Классы кораблей' : 'Ship classes'), _maxTfWidth: 250}"/>
+                        <bind name="dispatch" value="'click'; 'switchshowClasses'"/>
+                    </block>	
+					<block className="colorClasses">
+						<bind name="style" value="'alpha'; showClasses ? 1 : 0"/>
+						<style>
+							<marginLeft value="0px"/>
+                            <marginTop value="0px"/>
+                            <marginBottom value="0px"/>
+                        </style>
+						<bind name="watch" value="'colorClasses'; (userPrefs.chatBoxWidth.colorClasses == null)? 1 : userPrefs.chatBoxWidth.colorClasses"/>
+                        <bind name="catch" value="'switchcolorClasses'"/>
+						<bind name="changeDispatch" value="colorClasses; 'savecolorClasses'"/>				
+                        <bind name="action" value="'savecolorClasses' ; 'setUserPref' ; {value: colorClasses, name: 'chatBoxWidth', subName: 'colorClasses'}"/>
+                        <block className="tab_bar_bg" type="native">
+                            <style>
+                                <widthByChildren value="true"/>
+                                <heightByChildren value="true"/>
+                            </style>
+                            <block>
+                                <style>
+									<marginLeft value="2px"/>
+                                    <marginRight value="2px"/>
+                                    <flow value="horizontal"/>
+                                </style>
+                                <block className="MainTabSmall">
+                                    <block className="tab_bar_item_small" type="native">
+										<style>
+											<width value="90px"/>
+											<height value="25px"/>
+										</style>
+										<bind name="selected" value="colorClasses == 1"/>
+										<bind name="dispatch" value="'buttonClick'; 'switchcolorClasses'; {colorClasses: 1}"/>
+										<bind name="label" value="(Lang=='1' ? 'Белые' : 'White')"/>
+									</block>
+                                </block>
+                                <block className="MainTabSmall">
+									<bind name="visible" value="nameEnabled"/>
+                                    <block className="tab_bar_item_small" type="native">
+                                        <style>
+                                            <width value="90px"/>
+                                            <height value="25px"/>
+                                        </style>
+                                        <bind name="selected" value="colorClasses == 2"/>
+                                        <bind name="dispatch" value="'buttonClick'; 'switchcolorClasses'; {colorClasses: 2}"/>
+                                        <bind name="label" value="(Lang=='1' ? 'Цветные' : 'Coloured')"/>
+                                    </block>
+                                </block>
+							</block>
+						</block>
+					</block>
+					<block className="showHP">
+                        <bind name="watch" value=" 'showHP'; (userPrefs.elementsGroupExpand.showHP == null) ? true : userPrefs.elementsGroupExpand.showHP "/>
+                        <bind name="catch" value="'switchshowHPBox'; { showHP: !showHP }; 'saveshowHP'"/>
+                        <bind name="action" value="'saveshowHP' ; 'setUserPref' ; {value: showHP, name: 'elementsGroupExpand', subName: 'showHP'}"/>                            
+                        <bind name="instance" value="'CheckBox'; {switchProperty: showHP, label: (Lang=='1' ? 'Полоски боеспособности' : 'HP bars'), _maxTfWidth: 250}"/>
+                        <bind name="dispatch" value="'click'; 'switchshowHPBox'"/>
+                    </block>
+					<block className="DifcolorHP">
+						<bind name="style" value="'alpha'; showHP ? 1 : 0"/>
+						<style>
+							<marginLeft value="0px"/>
+                            <marginTop value="0px"/>
+                            <marginBottom value="0px"/>
+                        </style>
+						<bind name="watch" value="'colorHP'; (userPrefs.chatBoxWidth.colorHP == null)? 1 : userPrefs.chatBoxWidth.colorHP"/>
+                        <bind name="catch" value="'switchcolorHP'"/>
+						<bind name="changeDispatch" value="colorHP; 'savecolorHP'"/>				
+                        <bind name="action" value="'savecolorHP' ; 'setUserPref' ; {value: colorHP, name: 'chatBoxWidth', subName: 'colorHP'}"/>
+                        <block className="tab_bar_bg" type="native">
+                            <style>
+                                <widthByChildren value="true"/>
+                                <heightByChildren value="true"/>
+                            </style>
+                            <block>
+                                <style>
+                                    <marginLeft value="2px"/>
+                                    <marginRight value="2px"/>
+                                    <flow value="horizontal"/>
+                                </style>
+                                <block className="MainTabSmall">
+                                    <block className="tab_bar_item_small" type="native">
+                                        <style>
+                                            <width value="90px"/>
+                                            <height value="25px"/>
+                                        </style>
+                                        <bind name="selected" value="colorHP == 1"/>
+                                        <bind name="dispatch" value="'buttonClick'; 'switchcolorHP'; {colorHP: 1}"/>
+                                        <bind name="label" value="(Lang=='1' ? 'Зеленые' : 'Green')"/>
+                                    </block>
+                                </block>
+                                <block className="MainTabSmall">
+									<bind name="visible" value="nameEnabled"/>
+                                    <block className="tab_bar_item_small" type="native">
+                                        <style>
+                                            <width value="90px"/>
+                                            <height value="25px"/>
+                                        </style>
+                                        <bind name="selected" value="colorHP == 2"/>
+                                        <bind name="dispatch" value="'buttonClick'; 'switchcolorHP'; {colorHP: 2}"/>
+                                        <bind name="label" value="(Lang=='1' ? 'Разноцветные' : 'Coloured')"/>
+                                    </block>
+                                </block>
+							</block>
+						</block>
+					</block>
+					<block className="heightHP">							
+						<bind name="style" value="'alpha'; showHP ? 1 : 0"/>
+						<style>
+							<height value="45px"/>
+	 						<marginLeft value="0px"/>
+                               <marginTop value="0px"/>
+                               <marginBottom value="0px"/>
+                           </style>
+						<bind name="watch" value="'heightHP'; (userPrefs.chatBoxWidth.heightHP == null)? 100 : userPrefs.chatBoxWidth.heightHP"/>
+                        <bind name="catch" value="'switchheightHP'"/>
+						<bind name="changeDispatch" value="heightHP; 'saveheightHP'"/>				
+                        <bind name="action" value="'saveheightHP' ; 'setUserPref' ; {value: heightHP, name: 'chatBoxWidth', subName: 'heightHP'}"/>							
+						<block className="slider_default" type="native">
+							<styleClass value="$FullsizeAbsolute"/>
+                            <bind name="enabled" value="true"/>
+                            <bind name="focusable" value="true"/>
+                            <bind name="value" value="'100'"/>			
+                            <bind name="minimum" value="'10'"/>			
+                            <bind name="maximum" value="'100'"/>			
+                            <bind name="snapping" value="false"/>																						
+                            <bind name="snapInterval" value="'0.1'"/>																																	
+                            <bind name="liveDragging" value="false"/>																																											
+                            <bind name="visible" value="true"/>										
+							<bind name="sync" value="'value'; 'valueChange'; heightHP; 'switchheightHP'"/>
+							<style>
+                                <width value="200px"/>
+								<marginTop value="25px"/>
+                            </style>
+						</block>
+						<block type="text">
+							<styleClass value="$TextDefault"/>
+							<style>
+								<fontSize value="16"/>
+								<marginTop value="0px"/>
+							</style>
+							<bind name="text" value="(Lang=='1' ? 'Высота полосок' : 'HP bars height')"/>							
+						</block>	
+					</block>
+					<block className="alphaHPbarbar">
+						<bind name="style" value="'alpha'; showHP ? 1 : 0"/>
+						<style>
+							<height value="45px"/>
+	 						<marginLeft value="0px"/>
+                            <marginTop value="0px"/>
+                            <marginBottom value="0px"/>
+                        </style>
+						<bind name="watch" value="'alphaHPbar'; (userPrefs.chatBoxWidth.alphaHPbar == null)? 0.5 : userPrefs.chatBoxWidth.alphaHPbar"/>
+                        <bind name="catch" value="'switchalphaHPbar'"/>
+						<bind name="changeDispatch" value="alphaHPbar; 'savealphaHPbar'"/>				
+                        <bind name="action" value="'savealphaHPbar' ; 'setUserPref' ; {value: alphaHPbar, name: 'chatBoxWidth', subName: 'alphaHPbar'}"/>							
+						<block className="slider_default" type="native">
+							<styleClass value="$FullsizeAbsolute"/>
+                               <bind name="enabled" value="true"/>
+                               <bind name="focusable" value="true"/>
+                               <bind name="value" value="'0.5'"/>			
+                               <bind name="minimum" value="'0.2'"/>			
+                               <bind name="maximum" value="'1'"/>			
+                               <bind name="snapping" value="false"/>																						
+                               <bind name="snapInterval" value="'0.1'"/>																																	
+                               <bind name="liveDragging" value="false"/>																																											
+                               <bind name="visible" value="true"/>										
+							<bind name="sync" value="'value'; 'valueChange'; alphaHPbar; 'switchalphaHPbar'"/>
+							<style>
+                                <width value="200px"/>
+								<marginTop value="25px"/>
+                            </style>
+						</block>
+						<block type="text">
+							<styleClass value="$TextDefault"/>
+							<style>
+								<fontSize value="16"/>
+								<marginTop value="0px"/>
+							</style>
+							<bind name="text" value="(Lang=='1' ? 'Насыщенность цвета полосок HP' : 'HP bars saturation')"/>							
+						</block>	
+					</block>
+				</block>
+            </block>				
+        </block>
+    </block>	<!-- end list of PanelSettings -->
+	<block className="BBClock"> 
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+        <bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="draggableWindow" value="'BBCDragZone'; 'IMPosition'; 'BBC'"/>
+		<bind name="watch" value="'BBCPositionX'; (userPrefs.IMPositionX.BBC == null)  ? '175' : userPrefs.IMPositionX.BBC"/>
+        <bind name="watch" value="'BBCPositionY'; (userPrefs.IMPositionY.BBC == null)  ? '5' :  userPrefs.IMPositionY.BBC"/>
+        <bind name="left" value="BBCPositionX"/>
+        <bind name="top" value="BBCPositionY"/>
+		<block>	
+			<bind name="appear" value="'addedToStage'; 0.6; 0; {alpha: 0}; {alpha: 1}"/>
+			<bind name="watch" value=" 'clockEnabled'; (userPrefs.elementsGroupExpand.clockEnabled == null) ? true : userPrefs.elementsGroupExpand.clockEnabled "/>
+			<bind name="visible" value="clockEnabled"/>
+			<block className="contrast_panel" type="native">
+				<styleClass value="$FullsizeAbsolute"/>
+				<style>
+					<marginTop value="-2px"/>
+					<marginBottom value="-2px"/>
+				</style>
+				<bind name="style" value="'alpha'; 0.4"/>
+			</block>
+			<block>						
+				<block type="text">
+					<styleClass value="$TextDefaultBold"/>
+					<style>
+						<textAlign value="center"/>
+						<textColor value="0xEEEEEE"/> 
+						<fontSize value="20"/>  
+					</style>
+					<bind name="clock" value="'timeText'; 'hh:mm:ss'"/>
+					<bind name="pureText" value="'' + timeText"/>
+				</block>
+				<params>
+					<param name="name" value="BBCDragZone"/>
+				</params>
+			</block>
+		</block>
+		<style>
+			<width value="200px"/>
+			<height value="26px"/>
+			<position value="absolute"/>
+		</style>	
+	</block>
+	<block className="EarsContent">
+		<bind name="firstEntityDH" value="'mouseEntity'; CC.mouse"/>
+		<bind name="watchDH" value="'isCursorActive'; ['mouseEntity.mouse.evActiveChanged']; mouseEntity.mouse.active"/>
+		<bind name="changeDispatch" value="isCursorActive; 'Tooltip.Close'; {}; 1; false"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+        <bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="watch" value=" 'showAssistedDamage'; (userPrefs.showAssistedDamage == null) ? false : userPrefs.showAssistedDamage "/>
+		<bind name="watch" value=" 'showBlockedDamage'; (userPrefs.showBlockedDamage == null) ? false : userPrefs.showBlockedDamage "/>
+		<style>
+			<width value="100%"/>
+			<height value="100%"/>
+		</style>
+		<block>
+			<style>
+				<left value="0px"/>
+				<top value="67px"/>
+				<position value="absolute"/>
+			</style>
+			<bind name="style" value="'top'; (showBlockedDamage == true &amp;&amp; showAssistedDamage == true) ? '107' : (showBlockedDamage == true || showAssistedDamage ==  true) ? '87' : '67'"/>
+			<bind name="collectionRepeatDH" value="CC.avatar; 'TeamStructureRendererAllies'; 'team.ally.sortedAlive'; {_selfPlayer: _selfPlayer, _isDynamicDivisionsEnabled: _isDynamicDivisionsEnabled}"/>
+		</block>
+		<block>
+			<style>
+				<right value="0px"/>
+				<top value="67px"/>
+				<position value="absolute"/>
+			</style>
+			<bind name="style" value="'top'; (showBlockedDamage == true &amp;&amp; showAssistedDamage == true) ? '107' : (showBlockedDamage == true || showAssistedDamage ==  true) ? '87' : '67'"/>
+			<bind name="collectionRepeatDH" value="CC.avatar; 'TeamStructureRendererEnemies'; 'team.enemy.sortedAlive'; {_selfPlayer: _selfPlayer}"/>
+		</block>
+	</block>
+	<block className="TeamStructureRendererAllies"> <!-- LEFT EAR -->
+		<bind name="name" value="'player_' + name"/>
+		<bind name="controller" value="lesta.unbound.controls.UbInteractiveController"/>
+		<bind name="controller" value="lesta.dialogs.controllers.EntitySingletonController; 'gameInfo'"/>
+		<bind name="controller" value="lesta.dialogs.controllers.EntitySingletonController; 'slimClientData'"/>
+		<bind name="controller" value="lesta.dialogs.controllers.CollectionController; 'playersInvitedToDivision'; name; 'playerInvitationData'"/>
+		<bind name="controller" value="lesta.dialogs.controllers.CollectionController; 'players in battle'; 'name'; name; 'playerInCollection'"/>
+		<bind name="watch" value="'player'; playerInCollection[0]"/>
+		<bind name="primaryEntityDH" value="'playerVoiceChatEntity'; CC.playerVoiceState; pureName"/>
+		<bind name="primaryEntityDH" value="'clanEntity'; CC.clan; clanId"/>
+		<bind name="primaryEntityDH" value="'clanBattleInfoEntity'; CC.clanBattleInfo; clanId"/>
+		<bind name="primaryEntityDH" value="'clanExtendedEntity'; CC.clanExtended; clanId"/>
+		<bind name="dataRefDH" value="'playerEntity'; '$dataRef.ref'"/>
+		<bind name="firstEntityDH" value="'mouseEntity'; CC.mouse"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+        <bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="watchDH" value="'playerId'; 			[]; playerEntity.avatar.id"/>
+		<bind name="watchDH" value="'relation'; 			['playerEntity.relation.evChanged']; playerEntity.relation.value"/>
+		<bind name="watchDH" value="'isAlive'; 			['playerEntity.health.evKilled']; playerEntity.health.isAlive"/>
+		<bind name="watchDH" value="'ttkStatus'; 		['playerEntity.avatar.evTTKStatusChanged']; playerEntity.avatar.ttkStatus"/>
+		<bind name="watchDH" value="'tkStatus'; 			['playerEntity.avatar.evTeamkillStatusChanged']; playerEntity.avatar.tkStatus"/>
+		<bind name="watchDH" value="'frags'; 			['playerEntity.avatar.evFragsChanged']; playerEntity.avatar.frags"/>
+		<bind name="watchDH" value="'division'; 			['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.division"/>
+		<bind name="watchDH" value="'divisionId'; 		['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.divisionId"/>
+		<bind name="watchDH" value="'divisionSign'; 		['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.divisionSign"/>
+		<bind name="watchDH" value="'divisionHidden';	['playerEntity.avatar.evDivisionChanged', 'playerEntity.avatar.evDivisionHiddenChanged']; playerEntity.avatar.divisionHidden"/>
+		<bind name="watchDH" value="'isInSameDivision'; 	['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.isInSameDivision"/>
+		<bind name="watchDH" value="'isDivisionCommander'; 	['playerEntity.avatar.evIsDivisionCommanderUpdated']; playerEntity.avatar.isDivisionCommander"/>
+		<bind name="watchDH" value="'invitationsEnabled';['playerEntity.avatar.evInvitationsEnabledChanged']; playerEntity.avatar.invitationsEnabled"/>
+		<bind name="watchDH" value="'inviteCooldown'; 	['playerEntity.avatar.evInviteCooldownChanged']; playerEntity.avatar.inviteCooldown"/>
+		<bind name="watchDH" value="'inviteCooldownEnabled'; 	['playerEntity.avatar.evInviteCooldownEnabledChanged']; playerEntity.avatar.inviteCooldownEnabled"/>
+		<bind name="watchDH" value="'isLeaver';			['playerEntity.avatar.evIsLeaverChanged']; playerEntity.avatar.isLeaver"/>
+		<bind name="watchDH" value="'pathTinyIcon'; 		[]; playerEntity.avatar.ship.ref.ship.pathTinyIcon"/>
+		<bind name="watchDH" value="'pathOwnTinyIcon'; 	[]; playerEntity.avatar.ship.ref.ship.pathOwnTinyIcon"/>
+		<bind name="watchDH" value="'pathTinyDeadIcon'; 	[]; playerEntity.avatar.ship.ref.ship.pathTinyDeadIcon"/>
+		<bind name="watchDH" value="'mute'; 				['playerEntity.avatar.evMuteChanged']; playerEntity.avatar.mute"/>
+		<bind name="watchDH" value="'name'; 				[]; playerEntity.avatar.name"/>
+		<bind name="watchDH" value="'pureName'; 			[]; playerEntity.avatar.pureName"/>
+		<bind name="watchDH" value="'isBot'; 			[]; playerEntity.avatar.isBot"/>
+		<bind name="watchDH" value="'dbId'; 			[]; playerEntity.accountSimple.dbId"/>
+		<bind name="watchDH" value="'isSpeaking'; 		['playerVoiceChatEntity.playerVoiceState.evIsSpeakingChanged']; playerVoiceChatEntity.playerVoiceState.isSpeaking"/>
+		<bind name="watchDH" value="'isMuted'; 			['playerVoiceChatEntity.playerVoiceState.evIsMutedChanged']; playerVoiceChatEntity.playerVoiceState.isMuted"/>
+		<bind name="watch" value="'isSelf'; (relation == 0)"/>
+		<bind name="watch" value="'isInVoiceChat'; playerVoiceChatEntity != null"/>
+		<bind name="watchDH" value="'nameUpper'; 	[]; playerEntity.avatar.ship.ref.ship.nameUpper"/>
+		<bind name="watchDH" value="'shipType'; 	[]; playerEntity.avatar.ship.ref.ship.subtype"/>
+		<bind name="watchDH" value="'rLevel'; 	[]; playerEntity.avatar.ship.ref.ship.levelRome"/>
+		<bind name="watchDH" value="'shipInfo'; []; player.shipParams"/>
+		<bind name="watchDH" value="'clanTag'; []; player.clanTag"/>
+		<bind name="watchDH" value="'clanId'; 	['playerEntity.clanman.evClanIdChanged']; playerEntity.clanman.clanId"/>
+		<bind name="watchDH" value="'color'; 	['clanExtendedEntity.clanExtended.evColorChanged']; clanExtendedEntity.clanExtended.color"/>
+		<bind name="watch" value="'clanTagColor'; ('0xff' + color)"/>																		
+		<bind name="visible" value="showPanels"/>
+		<bind name="watch" value=" 'scalePanels'; ((userPrefs.chatBoxWidth.scalePanels == null) || (userPrefs.chatBoxWidth.scalePanels &lt; 0.8) || (userPrefs.chatBoxWidth.scalePanels &gt; 1.3))? 0.85 : userPrefs.chatBoxWidth.scalePanels"/>
+		<bind name="watch" value=" 'showKilled'; (userPrefs.elementsGroupExpand.showKilled == null) ? true : userPrefs.elementsGroupExpand.showKilled "/>
+        <bind name="watch" value=" 'showPanels'; (userPrefs.elementsGroupExpand.showPanels == null) ? true : userPrefs.elementsGroupExpand.showPanels "/>
+        <bind name="watch" value=" 'showParams'; (userPrefs.elementsGroupExpand.showParams == null) ? false : userPrefs.elementsGroupExpand.showParams "/>
+        <bind name="watch" value=" 'showClanIcon'; (userPrefs.elementsGroupExpand.showClanIcon == null) ? true : userPrefs.elementsGroupExpand.showClanIcon "/>
+        <bind name="watch" value=" 'showShipNames'; (userPrefs.elementsGroupExpand.showShipNames == null) ? true : userPrefs.elementsGroupExpand.showShipNames "/>
+		<bind name="watch" value=" 'showNickNames'; (userPrefs.elementsGroupExpand.showNickNames == null) ? false : userPrefs.elementsGroupExpand.showNickNames "/>
+		<bind name="watch" value=" 'whiteShipNames'; (userPrefs.elementsGroupExpand.whiteShipNames == null) ? true : userPrefs.elementsGroupExpand.whiteShipNames "/>
+        <bind name="watch" value=" 'showClasses'; (userPrefs.elementsGroupExpand.showClasses == null) ? true : userPrefs.elementsGroupExpand.showClasses "/>
+        <bind name="watch" value=" 'showLevel'; (userPrefs.elementsGroupExpand.showLevel == null) ? true : userPrefs.elementsGroupExpand.showLevel "/>
+		<bind name="watch" value=" 'showHP'; (userPrefs.elementsGroupExpand.showHP == null) ? true : userPrefs.elementsGroupExpand.showHP "/>			
+		<bind name="watch" value=" 'showIcons'; (userPrefs.elementsGroupExpand.showIcons == null) ? false : userPrefs.elementsGroupExpand.showIcons "/>
+		<bind name="watch" value=" 'colorClasses'; (userPrefs.chatBoxWidth.colorClasses == null) ? 1 : userPrefs.chatBoxWidth.colorClasses "/>
+		<bind name="watch" value=" 'clanLeagues'; (userPrefs.chatBoxWidth.clanLeagues == null) ? 1 : userPrefs.chatBoxWidth.clanLeagues "/>
+		<bind name="watch" value=" 'customIcons'; (userPrefs.chatBoxWidth.customIcons == null) ? 0 : userPrefs.chatBoxWidth.customIcons "/>
+		<bind name="watch" value=" 'heightHP'; (userPrefs.chatBoxWidth.heightHP == null) ? 100 : userPrefs.chatBoxWidth.heightHP "/>
+		<bind name="watch" value=" 'alphaHPbar'; (userPrefs.chatBoxWidth.alphaHPbar == null) ? 0.5 : userPrefs.chatBoxWidth.alphaHPbar "/>
+		<bind name="watch" value=" 'colorHP'; (userPrefs.chatBoxWidth.colorHP == null) ? 1 : userPrefs.chatBoxWidth.colorHP "/>
+		<bind name="var" value="{healthP:'100%'}"/>
+		<bind name="watchDH" value="'healthP'; 	['playerEntity.health.evValueChanged']; (((playerEntity.health.value &gt; 0) &amp;&amp; isAlive) ? 
+																						((100 * playerEntity.health.value / playerEntity.health.max) + '%'): ( isAlive ? healthP: '0%'))"/>		
+		<bind name="watchDH" value="'isIgnored';['playerEntity.contact.evIsIgnoredChanged']; playerEntity.contact.isIgnored"/>
+		<bind name="watch" value="'player'; {
+							relation: relation,
+							name: name,
+							clanTag: clanTag,
+							pureName: pureName,
+							nameUpper: nameUpper,
+							shipType: shipType,
+							rLevel: rLevel,
+							ttkStatus: ttkStatus,
+							tkStatus: tkStatus,
+							isInSameDivision: isInSameDivision,
+							isDivisionCommander: isDivisionCommander,
+							isInVoiceChat: isInVoiceChat,
+							isMuted: isMuted,
+							inviteCooldown: inviteCooldown,
+							division: division,
+							isAlive: isAlive,
+							invitationsEnabled: invitationsEnabled,
+							inviteCooldownEnabled: inviteCooldownEnabled,
+							isLeaver: isLeaver,
+							id: playerId,
+							mute: mute,
+							isInSameDivisionOnStart: playerEntity.avatar.isInSameDivisionOnStart
+		}"/> 
+			<bind name="visible" value="isAlive ? true: showKilled"/>
+		<block>
+			<bind name="visible" value="isInSameDivision"/>
+			<style>
+				<backgroundColor value="0x40ffdc84"/>
+				<position value="absolute"/>
+				<height value="100%"/>
+				<width value="100%"/>
+				<hitTest value="false"/>
+			</style>
+		</block>
+		<block className="dock_submenu_item_bg" type="native">
+			<bind name="transition" value="mouseDown || contextMenuVisible || rollOver; 0.1; {alpha: 0}; {alpha: 1}"/>
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block> <!-- Background -->
+			<style>
+				<width value="100%"/>
+				<height value="100%"/>
+				<position value="absolute"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+					<height value="100%"/>
+					<blurFilter value="2 2"/>
+				</style>
+				<bind name="style" value="'width'; 100"/>
+				<bind name="style" value="'backgroundColor'; '0x48000000'"/>
+			</block>
+		</block>
+		<block className="HealthRowHolder">
+			<style>
+				<width value="100%"/>
+				<height value="100%"/>
+				<blurFilter value="2 2"/>
+				<position value="absolute"/>
+				<top value="100%"/>
+			</style>
+				<bind name="style" value="'alpha'; alphaHPbar"/>
+				<bind name="style" value="'width'; healthP"/>
+				<bind name="style" value="'height'; heightHP"/>
+				<bind name="scaleY" value="-1"/>
+				<bind name="style" value="'backgroundColor'; (colorHP == 1) ? '0xFF00AA00' : '0xFF00B4B9'"/>
+				<bind name="visible" value="isAlive? showHP : false"/>
+		</block>	
+		<bind name="tooltip" value="'BattlePlayerTooltip'; {	_isInBattle: true,
+											_player: player, _selfPlayer: _selfPlayer,
+											_battleType: gameInfo.battleType}"/>
+		<bind name="menu" value="'UIListPlayerContextMenu'; !(isSelf)	?	{_player: player, _selfPlayer: _selfPlayer, _battleType: gameInfo.battleType, 
+															_complaintsAvailable: true, _isBattleStats: true}
+														: 	null; null; 'contextMenuVisible'"/>
+		<block>
+			<style>
+				<marginTop value="-2"/>
+				<hitTest value="false"/>
+			</style>
+			<bind name="instance" value="'UIListVoiceTextChatIcons'; {	_isSelf: isSelf, _isTextChatMuted: mute, _selfPlayerDivisionId: divisionId,
+														_isInSameDivision: isInSameDivision, _battleType: gameInfo.battleType,
+														_isSpeaking: isSpeaking, _isVoiceChatMuted: isMuted, _isInVoiceChat: isInVoiceChat }"/>
+		</block>
+		<bind name="controller" value="lesta.dialogs.controllers.CollectionController; 'dynamicDivisionsData'; 'id'; _selfPlayer.divisionId; 'selfPlayerDivisionData'"/>
+		<bind name="watch" value="'isFreePlacesInDivision'; ((selfPlayerDivisionData[0].staff.length + selfPlayerDivisionData[0].inPortParticipantsCount) &lt; 3)"/>
+		<bind name="watch" value="'invitationDisableReason'; !(slimClientData.isFull)											? 'YourClientIsTooSlim' :
+											isSelf																? 'YouCantInviteYourself' :
+											!(isAlive)															? 'IDS_INVITATION_DISABLE_REASON_DESTROYED' :
+											!(_selfPlayer.isAlive)												? 'IDS_DIVISION_MANAGEMENT_LOCKED_FOR_DESTROYED' :
+											isLeaver															? 'IDS_INVITATION_DISABLE_REASON_PLAYER_IS_OUT_OF_BATTLE':
+											(division != 0)														? 'IDS_INVITATION_DISABLE_REASON_ALREADY_IN_DIVISION' :
+											(playerInvitationData != null)										? 'PlayerIsAlreadyInvited' :
+											isInSameDivision													? 'PlayerIsAlreadyInYourDivision' :
+											(_selfPlayer.division != 0) &amp;&amp; !(_selfPlayer.isDivisionCommander)	? 'IDS_INVITATION_DISABLE_REASON_NOT_COMMANDER' :
+											!(isFreePlacesInDivision)											? 'IDS_INVITATION_DISABLE_REASON_NO_FREE_PLACES' :
+											!(invitationsEnabled)												? 'IDS_INVITATION_DISABLE_REASON_INVITATIONS_DISABLED' :
+											inviteCooldownEnabled												? 'IDS_WAIT_TIMEOUT_TO_INVITE_TO_DIVISION'
+																												: 'no_reason'"/>
+		<block>
+			<bind name="visible" value="(division &gt; 0) &amp;&amp; !(divisionHidden)"/>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<position value="absolute"/>
+				<marginLeft value="5"/>
+				<hitTest value="false"/>
+			</style>
+			<block className="division_item" type="native">
+				<bind name="gotoAndStop!" value="isInSameDivision ? (divisionSign + 1) : (divisionSign + 1 + 10)"/>
+			</block>
+		</block>
+		<block>
+			<bind name="visible" value="(playerInvitationData != null)"/>
+			<bind name="transition" value="rollOver; 0.15; {alpha: 1}; {alpha: 0}; {alpha: 1}; 1; 0.05"/>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<position value="absolute"/>
+				<marginLeft value="5"/>
+				<hitTest value="false"/>
+			</style>
+			<block className="formation_player_status" type="native">
+				<bind name="gotoAndStop!" value="'empty_slot_division'"/>
+			</block>
+		</block>
+		<block>
+			<bind name="transition" value="rollOver; 0.15; {alpha: 0}; {alpha: 1.0}; {alpha: 0}; 1; 0.05"/>
+			<styleClass value="$MiddleVAligned"/>
+			<block>
+				<bind name="visible" value="(invitationDisableReason == 'no_reason')"/>
+				<styleClass value="$MiddleVAligned"/>
+				<style>
+					<position value="absolute"/>
+					<marginLeft value="5"/>
+				</style>
+				<bind name="tooltip" value="'MouseInstructionTooltip'; { _mouseInstructions: [{_type: 'no_icon', _instructionText: 'IDS_INVITE_IN_DIVISION'}], _maxWidth: 250, _isInBattle: true}"/>
+				<block className="button_division_invite" type="native">
+					<bind name="action" value="'buttonClick'; 'inviteToDivision'; {playerId: playerId, playerName: name, inviteType: InviteType.COMMON}"/>
+				</block>
+			</block>
+			<block>
+				<bind name="visible" value="(_selfPlayer.isDivisionCommander &amp;&amp; !!(playerInvitationData))"/>
+				<styleClass value="$MiddleVAligned"/>
+				<style>
+					<position value="absolute"/>
+					<marginLeft value="4"/>
+				</style>
+				<bind name="tooltip" value="'MouseInstructionTooltip'; { _mouseInstructions: [{_type: 'no_icon', _instructionText: 'IDS_RECALL_INVITATION'}], _maxWidth: 250, _isInBattle: true}"/>
+				<block className="button_cross" type="native">
+					<bind name="action" value="'buttonClick'; 'revokeInvitationToDivision'; {id: playerInvitationData.id}"/>
+				</block>
+			</block>
+		</block>
+		<block><!-- ShipInfo Icons -->	
+			<style>
+				<width value="80"/>
+				<left value="15"/>
+				<marginTop value="0px"/>
+			</style>
+			<bind name="visible" value="showParams"/>
+			<bind name="style" value="'width'; showParams ? (scalePanels*120) : '0px'"/>	
+			<block type="text"> <!-- sunk icon -->
+				<bind name="text" value="'W'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="!isAlive ? showParams? true : false : false"/>
+				<style>
+					<position value="absolute"/>
+					<left value="5%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginBottom value="-6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*30) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*24)"/>
+			</block>
+			<block type="text"> <!-- max_speed icon -->
+				<bind name="text" value="'L'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? true : false : false"/>
+				<style>
+					<position value="absolute"/>
+					<left value="5%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- artillery icon -->
+				<bind name="text" value="'F'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? (shipInfo.artillery_guns_count>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<left value="35%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- aircarrier icon -->
+				<bind name="text" value="'H'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.numSquadrons>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<left value="35%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>	
+			<block type="text"> <!-- torpedoes icon -->
+				<bind name="text" value="'J'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.torpedoes_guns_count>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<left value="65%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>		
+			<block type="text"> <!-- max_speed -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.maxSpeed, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? true : false : false"/>
+				<style>
+					<textAlign value="left"/>
+					<position value="absolute"/>
+					<left value="8%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- artillery -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.artillery_max_dist, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? (shipInfo.artillery_guns_count>0): false : false"/>
+				<style>
+					<textAlign value="left"/>
+					<position value="absolute"/>
+					<left value="38%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- aircarrier -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="shipInfo.numSquadrons+' / '+shipInfo.numMaxPlanes"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.numSquadrons>0): false : false"/>
+				<style>
+					<textAlign value="left"/>
+					<position value="absolute"/>
+					<left value="38%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*66) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>	
+			<block type="text"> <!-- torpedoes -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.torpedoes_max_dist, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.torpedoes_guns_count>0): false : false"/>
+				<style>
+					<textAlign value="left"/>
+					<position value="absolute"/>
+					<left value="68%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+		</block>
+		<block>
+			<style>
+				<width value="90"/>
+				<marginRight value="2px"/>
+			</style>
+			<bind name="style" value="'marginLeft'; showParams ? '5' : '25'"/>
+			<bind name="style" value="'width'; (scalePanels*105)"/>
+			<bind name="visible" value="showNickNames || showShipNames"/>
+			<block type="text"> <!-- shipName -->
+				<bind name="visible" value="showShipNames"/>
+				<styleClass value="$TextDefault"/>						
+				<bind name="text" value="nameUpper"/> 
+				<bind name="class" value="'$Bold'"/>		
+				<style>
+					<multiline value="false"/>
+					<position value="absolute"/>
+					<top value="-3"/>
+					<width value="75"/>
+					<fontSize value="12"/>
+					<fontFamily value="$WWSDefaultFontBold"/>
+				</style>
+				<bind name="class" value="!whiteShipNames? tkStatus? '$FontColorTeamkiller'
+												: ttkStatus ? '$FontColorTTK'
+												: (isSelf || isInSameDivision)  ? '$FontColorGolden'
+												: isIgnored  ? '$FontColorIsIgnored'
+												: '$Bold'
+												: isSelf  ? tkStatus  ? '$FontColorTeamkiller' 
+												: ttkStatus  ? '$FontColorTTK'
+												: '$Bold'
+								: '$Bold'"/>
+				<bind name="style" value="'top'; (showNickNames) ? '(scalePanels*10)': '1'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+				<bind name="style" value="'width'; (scalePanels*90)"/>
+			</block>
+			
+			<block type="text"> <!-- playerName -->
+				<bind name="visible" value="showNickNames"/>
+				<styleClass value="$TextDefault"/>						
+				<bind name="text" value="pureName"/> 		
+				<style>
+					<multiline value="false"/>
+					<position value="absolute"/>
+					<top value="-3"/>
+					<width value="75"/>
+					<fontSize value="12"/>
+				</style>
+				<bind name="class" value="tkStatus 	? '$FontColorTeamkiller'
+									: ttkStatus  ? '$FontColorTTK'
+									: (isSelf || isInSameDivision) 	? '$FontColorGolden'
+									: isIgnored  ? '$FontColorIsIgnored'
+									: isSelf  ? tkStatus 	? '$FontColorTeamkiller' 
+									: ttkStatus  ? '$FontColorTTK'
+									: '$FontColorGolden'
+									: '$None'"/>
+				<bind name="style" value="'top'; (showShipNames) ? '(scalePanels*(-5))': '1'"/>	
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+				<bind name="style" value="'width'; (scalePanels*90)"/>
+			</block>
+			<block> <!-- Clan icon -->
+				<bind name="style" value="'alpha'; showClanIcon ? 1 : 0"/>
+				<bind name="visible" value="showClanIcon &amp;&amp; clanLeagues == 1 ? clanTagColor == '0xffccffcc' :
+																	clanLeagues == 2 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' :
+																	clanLeagues == 3 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' || clanTagColor == '0xff999999' :
+																	clanLeagues == 4 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' || clanTagColor == '0xff999999' || clanTagColor == '0xffcc6633' : true "/>
+				<style>
+					<position value="absolute"/>
+					<left value="85%"/>
+					<marginTop value="5px"/>
+				</style>
+				<bind name="scaleX" value="(scalePanels*0.85)"/>
+				<bind name="scaleY" value="(scalePanels*0.85)"/>
+				<bind name="style" value="'backgroundImage'; ('url:../clan_icons/' + clanTag + '.png')"/>
+			</block>
+		</block>
+		<block type="text"> <!-- shipLevel -->
+			<bind name="visible" value="showLevel"/>
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/>
+			<bind name="class" value="'$Bold'"/>					
+			<bind name="text" value="rLevel"/>           
+			<style>
+				<marginLeft value="5"/>
+				<marginRight value="5"/>
+				<width value="20"/>
+				<fontSize value="12"/>
+			</style>
+			<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			<bind name="style" value="'width'; (scalePanels*25)"/>
+		</block>					
+		<block type="text"> <!-- shipClass -->
+			<bind name="visible" value="showClasses"/>
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/>				
+			<bind name="text" value="shipType=='Destroyer'?'3':shipType=='Cruiser'?'2':shipType=='Battleship'?'1':'0'"/>           
+			<bind name="style" value="'textColor'; (colorClasses==2) ? (isAlive?
+										(shipType=='Destroyer'?'0x00FF00':
+										shipType=='Cruiser'?'0x0000FF':
+										shipType=='Battleship'?'0xFF0000':'0xFFFF00'):0x999999) 
+										: (isAlive? 0xFFFFFF :0x999999)"/>                        
+			<style>
+				<marginLeft value="5"/>
+				<width value="20"/>
+				<fontFamily value="$WoWsSymbol"/>
+				<fontSize value="18"/>
+			</style>
+			<bind name="style" value="'fontSize'; (scalePanels*18)"/>
+			<bind name="style" value="'width'; (scalePanels*25)"/>
+		</block>
+		<block type="text"> <!-- frags -->
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/> 
+			<bind name="class" value="'$Bold'"/> 
+			<bind name="text" value="frags"/>           
+			<style>
+				<marginLeft value="5"/>
+				<width value="10"/>
+				<fontSize value="12"/>
+			</style>
+			<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			<bind name="style" value="'width'; (scalePanels*15)"/>
+		</block>
+		<block className="Icons"><!-- Icons -->
+			<style>
+				<height value="24"/>
+				<marginTop value="2"/>
+			</style>
+			<bind name="style" value="'left'; '103%'"/>
+			<bind name="scaleX" value="(scalePanels*1)"/>
+			<bind name="scaleY" value="(scalePanels*1.2)"/>
+			<bind name="style" value="'backgroundImage'; (customIcons==0) ? ('url:../ship_icons/' + playerEntity.avatar.ship.ref.ship.shortName + '.png') : ('url:../mod_icons/ship_icons/' + playerEntity.avatar.ship.ref.ship.shortName + '.png')"/>
+			<bind name="alpha" value="(!isAlive)?0.4:1"/>
+			<bind name="visible" value="showIcons"/>
+		</block>										
+		<style>
+			<height value="25"/>
+			<flow value="horizontal"/>
+		</style>
+		<bind name="style" value="'height'; (scalePanels*30)"/>
+	</block>
+	<block className="TeamStructureRendererEnemies"> <!-- RIGHT EAR -->
+		<bind name="name" value="'player_' + name"/>
+		<bind name="controller" value="lesta.unbound.controls.UbInteractiveController"/>
+		<bind name="controller" value="lesta.dialogs.controllers.EntitySingletonController; 'gameInfo'"/>
+		<bind name="controller" value="lesta.dialogs.controllers.CollectionController; 'players in battle'; 'name'; name; 'playerInCollection'"/>
+		<bind name="watch" value="'player'; playerInCollection[0]"/>
+		<bind name="primaryEntityDH" value="'playerVoiceChatEntity'; CC.playerVoiceState; pureName"/>
+		<bind name="primaryEntityDH" value="'clanEntity'; CC.clan; clanId"/>
+		<bind name="primaryEntityDH" value="'clanBattleInfoEntity'; CC.clanBattleInfo; clanId"/>
+		<bind name="primaryEntityDH" value="'clanExtendedEntity'; CC.clanExtended; clanId"/>
+		<bind name="dataRefDH" value="'playerEntity'; '$dataRef.ref'"/>
+		<bind name="firstEntityDH" value="'mouseEntity'; CC.mouse"/>
+		<bind name="collectionDH" value="CC.userPrefs; 'userPrefsCollection'"/>
+        <bind name="entityDH" value="'userPrefsEntity'; userPrefsCollection[0].id"/>
+		<bind name="watchDH" value="'userPrefs'; ['userPrefsEntity.userPrefs.evUserPrefsChanged']; userPrefsEntity.userPrefs.userPrefs"/>
+		<bind name="watchDH" value="'playerId'; 			[]; playerEntity.avatar.id"/>
+		<bind name="watchDH" value="'relation'; 			['playerEntity.relation.evChanged']; playerEntity.relation.value"/>
+		<bind name="watchDH" value="'isAlive'; 			['playerEntity.health.evKilled']; playerEntity.health.isAlive"/>
+		<bind name="watchDH" value="'ttkStatus'; 		['playerEntity.avatar.evTTKStatusChanged']; playerEntity.avatar.ttkStatus"/>
+		<bind name="watchDH" value="'frags'; 			['playerEntity.avatar.evFragsChanged']; playerEntity.avatar.frags"/>
+		<bind name="watchDH" value="'division'; 			['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.division"/>
+		<bind name="watchDH" value="'divisionId'; 		['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.divisionId"/>
+		<bind name="watchDH" value="'isSpeaking'; 		['playerEntity.playerVoiceState.evIsSpeakingChanged']; playerEntity.playerVoiceState.isSpeaking"/>
+		<bind name="watchDH" value="'isMuted'; 			['playerEntity.playerVoiceState.evIsMutedChanged']; playerEntity.playerVoiceState.isMuted"/>
+		<bind name="watchDH" value="'mute'; 				['playerEntity.avatar.evMuteChanged']; playerEntity.avatar.mute"/>
+		<bind name="watchDH" value="'active'; 			['playerEntity.voiceChat.evActiveChanged']; playerEntity.voiceChat.active"/>
+		<bind name="watchDH" value="'flags'; 			['playerEntity.target.evChanged']; playerEntity.target.flags"/>
+		<bind name="watchDH" value="'divisionSign'; 		['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.divisionSign"/>
+		<bind name="watchDH" value="'isInSameDivision'; 	['playerEntity.avatar.evDivisionChanged']; playerEntity.avatar.isInSameDivision"/>
+		<bind name="watchDH" value="'divisionHidden';	['playerEntity.avatar.evDivisionChanged', 'playerEntity.avatar.evDivisionHiddenChanged']; playerEntity.avatar.divisionHidden"/>
+		<bind name="watchDH" value="'pathTinyIcon'; 		[]; playerEntity.avatar.ship.ref.ship.pathTinyIcon"/>
+		<bind name="watchDH" value="'pathOwnTinyIcon'; 	[]; playerEntity.avatar.ship.ref.ship.pathOwnTinyIcon"/>
+		<bind name="watchDH" value="'pathTinyDeadIcon'; 	[]; playerEntity.avatar.ship.ref.ship.pathTinyDeadIcon"/>
+		<bind name="watchDH" value="'name'; 				[]; playerEntity.avatar.name"/>
+		<bind name="watchDH" value="'pureName'; 			[]; playerEntity.avatar.pureName"/>
+		<bind name="watchDH" value="'isBot'; 			[]; playerEntity.avatar.isBot"/>
+		<bind name="watchDH" value="'dbId'; 			[]; playerEntity.accountSimple.dbId"/>
+		<bind name="watch" value="'isSelf'; (relation == 0)"/>
+		<bind name="watchDH" value="'nameUpper'; 	[]; playerEntity.avatar.ship.ref.ship.nameUpper"/>
+		<bind name="watchDH" value="'shipType'; 	[]; playerEntity.avatar.ship.ref.ship.subtype"/>
+		<bind name="watchDH" value="'rLevel'; 	[]; playerEntity.avatar.ship.ref.ship.levelRome"/>
+		<bind name="watchDH" value="'shipInfo'; []; player.shipParams"/>
+		<bind name="watchDH" value="'clanTag'; []; player.clanTag"/>
+		<bind name="watchDH" value="'clanId'; 	['playerEntity.clanman.evClanIdChanged']; playerEntity.clanman.clanId"/>
+		<bind name="watchDH" value="'clanTag'; 	['clanEntity.clan.evTagChanged']; clanEntity.clan.tag"/>
+		<bind name="watchDH" value="'color'; 	['clanExtendedEntity.clanExtended.evColorChanged']; clanExtendedEntity.clanExtended.color"/>
+		<bind name="watchDH" value="'league'; 	['clanExtendedEntity.clanExtended.evLeagueChanged']; clanExtendedEntity.clanExtended.league"/>
+		<bind name="watch" value="'clanTagColor'; ('0xff' + color)"/>	
+		<bind name="watch" value="'scalePanels'; ((userPrefs.chatBoxWidth.scalePanels == null) || (userPrefs.chatBoxWidth.scalePanels &lt; 0.8) || (userPrefs.chatBoxWidth.scalePanels &gt; 1.3))? 0.85 : userPrefs.chatBoxWidth.scalePanels"/>
+		<bind name="watch" value=" 'whiteShipNames'; (userPrefs.elementsGroupExpand.whiteShipNames == null) ? true : userPrefs.elementsGroupExpand.whiteShipNames "/>
+		<bind name="visible" value="showPanels"/>
+		<bind name="watch" value=" 'showKilled'; (userPrefs.elementsGroupExpand.showKilled == null) ? true : userPrefs.elementsGroupExpand.showKilled "/>
+        <bind name="watch" value=" 'showPanels'; (userPrefs.elementsGroupExpand.showPanels == null) ? true : userPrefs.elementsGroupExpand.showPanels "/>
+		<bind name="watch" value=" 'showParams'; (userPrefs.elementsGroupExpand.showParams == null) ? false : userPrefs.elementsGroupExpand.showParams "/>
+		<bind name="watch" value=" 'showClanIcon'; (userPrefs.elementsGroupExpand.showClanIcon == null) ? true : userPrefs.elementsGroupExpand.showClanIcon "/>
+        <bind name="watch" value=" 'showShipNames'; (userPrefs.elementsGroupExpand.showShipNames == null) ? true : userPrefs.elementsGroupExpand.showShipNames "/>
+		<bind name="watch" value=" 'showNickNames'; (userPrefs.elementsGroupExpand.showNickNames == null) ? false : userPrefs.elementsGroupExpand.showNickNames "/>
+        <bind name="watch" value=" 'showClasses'; (userPrefs.elementsGroupExpand.showClasses == null) ? true : userPrefs.elementsGroupExpand.showClasses "/>
+        <bind name="watch" value=" 'showLevel'; (userPrefs.elementsGroupExpand.showLevel == null) ? true : userPrefs.elementsGroupExpand.showLevel "/>
+		<bind name="watch" value=" 'showHP'; (userPrefs.elementsGroupExpand.showHP == null) ? true : userPrefs.elementsGroupExpand.showHP "/>			
+		<bind name="watch" value=" 'showLamp'; (userPrefs.elementsGroupExpand.showLamp == null) ? true : userPrefs.elementsGroupExpand.showLamp "/>
+		<bind name="watch" value=" 'showIcons'; (userPrefs.elementsGroupExpand.showIcons == null) ? false : userPrefs.elementsGroupExpand.showIcons "/>
+		<bind name="watch" value=" 'colorClasses'; (userPrefs.chatBoxWidth.colorClasses == null) ? 1 : userPrefs.chatBoxWidth.colorClasses "/>
+		<bind name="watch" value=" 'clanLeagues'; (userPrefs.chatBoxWidth.clanLeagues == null) ? 1 : userPrefs.chatBoxWidth.clanLeagues "/>
+		<bind name="watch" value=" 'customIcons'; (userPrefs.chatBoxWidth.customIcons == null) ? 0 : userPrefs.chatBoxWidth.customIcons "/>
+		<bind name="watch" value=" 'heightHP'; (userPrefs.chatBoxWidth.heightHP == null) ? 100 : userPrefs.chatBoxWidth.heightHP "/>
+		<bind name="watch" value=" 'alphaHPbar'; (userPrefs.chatBoxWidth.alphaHPbar == null) ? 0.5 : userPrefs.chatBoxWidth.alphaHPbar "/>
+		<bind name="watch" value=" 'colorHP'; (userPrefs.chatBoxWidth.colorHP == null) ? 1 : userPrefs.chatBoxWidth.colorHP "/>
+		<bind name="var" value="{wasVisible:false}"/>
+		<bind name="watchDH" value="'visible'; ['playerEntity.visibility.evChanged']; playerEntity.visibility.mapVisible"/>
+		<bind name="watchDH" value="'wasVisible'; ['playerEntity.visibility.evChanged']; playerEntity.visibility.mapVisible || wasVisible "/>
+		<bind name="var" value="{healthP:'100%'}"/>
+		<bind name="watchDH" value="'healthP'; 	['playerEntity.health.evValueChanged']; (((playerEntity.health.value &gt; 0) &amp;&amp; isAlive) ? 
+																						((100 * playerEntity.health.value / playerEntity.health.max) + '%') : ( isAlive ? healthP: '0%'))"/>
+		<bind name="watchDH" value="'isIgnored';['playerEntity.contact.evIsIgnoredChanged']; playerEntity.contact.isIgnored"/>
+		<bind name="watch" value="'player'; {
+							relation: relation,
+							name: name,
+							clanTag: clanTag,
+							pureName: pureName,
+							nameUpper: nameUpper,
+							shipType: shipType,
+							rLevel: rLevel,
+							ttkStatus: ttkStatus,
+							isInSameDivision: false,
+							isDivisionCommander: false,
+							isInVoiceChat: false,
+							isMuted: isMuted,
+							inviteCooldown: inviteCooldown,
+							division: division,
+							isAlive: isAlive,
+							invitationsEnabled: false,
+							isLeaver: isLeaver,
+							id: playerId,
+							mute: mute,
+							isInSameDivisionOnStart: playerEntity.avatar.isInSameDivisionOnStart}"/>
+		<bind name="tooltip" value="'BattlePlayerTooltip'; {	_isInBattle: true,
+											_player: player, _selfPlayer: _selfPlayer,
+											_battleType: gameInfo.battleType}"/>
+		<bind name="menu" value="'UIListPlayerContextMenu'; !(isSelf)	?	{_player: player, _selfPlayer: _selfPlayer, _battleType: gameInfo.battleType, 
+															_complaintsAvailable: true, _isBattleStats: true}
+														: 	null; null; 'contextMenuVisible'"/>
+														
+		<bind name="visible" value="isAlive ? true: showKilled"/>
+		<block> <!-- Background -->
+			<style>
+				<width value="100%"/>
+				<height value="100%"/>
+				<position value="absolute"/>
+			</style>
+			<block>
+				<style>
+					<width value="100%"/>
+					<height value="100%"/>
+					<blurFilter value="2 2"/>
+				</style>
+				<bind name="style" value="'width'; 100"/>
+				<bind name="style" value="'backgroundColor'; '0x48000000'"/>
+			</block>
+		</block>
+		<block className="HealthRowHolder">
+			<style>
+				<width value="100%"/>
+				<height value="100%"/>
+				<position value="absolute"/>
+				<top value="100%"/>
+                <width value="100%"/>
+                <height value="100%"/>
+                <blurFilter value="2 2"/>
+                <align value="right"/>
+                <left value="100%"/>				
+			</style>
+			<bind name="scaleX" value="-1"/>
+			<bind name="style" value="'alpha'; alphaHPbar"/>
+			<bind name="style" value="'width'; healthP"/>
+					<bind name="style" value="'height'; heightHP"/>
+			<bind name="scaleY" value="-1"/>
+			<bind name="style" value="'backgroundColor'; (colorHP == 1) ? '0xFF00AA00' : '0xFFE60028'"/>
+			<bind name="visible" value="isAlive? showHP : false"/>
+		</block>						
+		<block className="Icons"> <!-- Icons -->
+			<style>
+				<position value="absolute"/>
+				<height value="24"/>
+				<marginTop value="2"/>
+			</style>
+			<bind name="style" value="'left'; (customIcons!=0) ?  showParams ?  '-45%' : '-62%' : '-5'"/>		
+			<bind name="scaleX" value="(customIcons!=0) ? (scalePanels*1) : (scalePanels*(-1))"/>
+			<bind name="scaleY" value="(scalePanels*1.2)"/>
+			<bind name="style" value="'backgroundImage'; (customIcons==0) ? ('url:../ship_icons/' + playerEntity.avatar.ship.ref.ship.shortName + '.png') : ('url:../mod_icons/ship_icons/' + playerEntity.avatar.ship.ref.ship.shortName + '.png')"/>
+			<bind name="alpha" value="(!isAlive) ? 0.4 : 1"/>
+			<bind name="visible" value="showIcons"/>
+		</block>		
+		<block type="text"> <!-- Lamp -->
+			<bind name="visible" value="showLamp"/>
+			<bind name="text" value="'A'"/>
+			<styleClass value="$TextDefault"/>
+			<bind name="style" value="'textColor'; visible ? '0xDDFFA500': '0xDDCCCCCC'"/>
+			<bind name="scaleY" value="(wasVisible &amp;&amp; isAlive) ? 1 : 0"/>
+			<style>
+				<width value="10"/>
+				<fontFamily value="$WoWsSymbol"/>
+				<left value="-8%"/>
+				<fontSize value="18"/>
+			</style>
+			<bind name="style" value="'fontSize'; (scalePanels*18)"/>
+		</block>
+		<block type="text"> <!-- frags -->
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/> 
+			<bind name="class" value="'$Bold'"/> 
+			<bind name="text" value="frags"/>           
+			<style>
+				<width value="15"/>
+				<fontSize value="12"/>
+			</style>
+			<bind name="style" value="'width'; (scalePanels*20)"/>
+			<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+		</block>
+		<block> <!-- priorityMarkers -->
+			<bind name="visible" value="(flags &amp; (1 &lt;&lt; WeaponType.ARTILLERY)) != 0"/>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<width value="15"/>
+				<height value="15"/>
+				<position value="absolute"/>
+				<left value="30"/>
+				<backgroundImage value="symbol:aww_priority_attack_small"/>
+			</style>
+		</block>
+		<block> <!-- priorityMarkers -->
+			<bind name="visible" value="(flags &amp; (1 &lt;&lt; WeaponType.ATBA)) != 0"/>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<width value="15"/>
+				<height value="15"/>
+				<position value="absolute"/>
+				<left value="15"/>
+				<backgroundImage value="symbol:scaliber_priority_attack_small"/>
+			</style>
+		</block>
+		<block type="text"> <!-- shipClass -->
+			<bind name="visible" value="showClasses"/>
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/>						
+			<bind name="text" value="shipType=='Destroyer'?'7':shipType=='Cruiser'?'6':shipType=='Battleship'?'5':'4'"/>           
+			<bind name="style" value="'textColor'; (colorClasses==2) ? (isAlive?
+										(shipType=='Destroyer'?'0x00FF00':
+										shipType=='Cruiser'?'0x0000FF':
+										shipType=='Battleship'?'0xFF0000':'0xFFFF00'):0x999999) 
+										: (isAlive? 0xFFFFFF :0x999999)"/>                        
+			<style>
+				<marginLeft value="5"/>
+				<width value="20"/>
+				<fontFamily value="$WoWsSymbol"/>
+				<fontSize value="18"/>
+			</style>
+			<bind name="style" value="'fontSize'; (scalePanels*18)"/>
+			<bind name="style" value="'width'; (scalePanels*25)"/>
+		</block>
+		<block type="text"> <!-- shipLevel -->
+			<bind name="visible" value="showLevel"/>
+			<styleClass value="$TextDefault"/>
+			<styleClass value="$MiddleVAligned"/>
+			<bind name="class" value="'$Bold'"/>					
+			<bind name="text" value="rLevel"/>           
+			<style>
+				<textAlign value="right"/>
+				<marginLeft value="5"/>
+				<marginRight value="5"/>
+				<width value="20"/>
+				<fontSize value="12"/>
+			</style>
+			<bind name="style" value="'width'; (scalePanels*25)"/>
+			<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+		</block>
+		<block>
+			<style>
+				<width value="90"/>
+			</style>
+			<bind name="style" value="'width'; (scalePanels*105)"/>
+			<bind name="style" value="'marginRight'; showParams ? '5' : '15'"/>
+			<bind name="visible" value="showNickNames || showShipNames"/>
+			<block type="text"> <!-- shipName -->
+				<bind name="visible" value="showShipNames"/>					
+				<styleClass value="$TextDefault"/>
+				<bind name="text" value="nameUpper"/> 
+				<bind name="class" value="'$Bold'"/>		
+				<style>
+					<position value="absolute"/>
+					<multiline value="false"/>
+					<textAlign value="right"/>
+					<marginLeft value="2"/>
+					<top value="8"/>
+					<width value="75"/>
+					<fontSize value="12"/>
+				</style>
+				<bind name="class" value="!whiteShipNames 	? isIgnored  ? '$FontColorIsIgnored' : '$Bold' : '$Bold'"/>
+				<bind name="style" value="'top'; (showNickNames) ? '(scalePanels*10)': '0'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+				<bind name="style" value="'width'; (scalePanels*90)"/>
+			</block>
+			<block type="text"> <!-- playerName -->
+				<bind name="visible" value="showNickNames"/>					
+				<styleClass value="$TextDefault"/>
+				<bind name="text" value="pureName"/>           
+				<style>
+					<position value="absolute"/>
+					<multiline value="false"/>
+					<textAlign value="right"/>
+					<marginLeft value="5"/>
+					<top value="-3"/>
+					<width value="75"/>
+					<fontSize value="12"/>
+				</style>
+				<bind name="class" value="isIgnored  ? '$FontColorIsIgnored'	: '$None'"/>
+				<bind name="style" value="'top'; (showShipNames) ? '(scalePanels*(-5))': '0'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+				<bind name="style" value="'width'; (scalePanels*90)"/>
+			</block>
+			<block type="text"> <!-- Clan icon -->
+				<bind name="style" value="'alpha'; showClanIcon ? 1 : 0"/>
+				<bind name="visible" value="showClanIcon &amp;&amp; clanLeagues == 1 ? clanTagColor == '0xffccffcc' :
+																	clanLeagues == 2 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' :
+																	clanLeagues == 3 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' || clanTagColor == '0xff999999' :
+																	clanLeagues == 4 ? clanTagColor == '0xffccffcc' || clanTagColor == '0xffffcc33' || clanTagColor == '0xff999999' || clanTagColor == '0xffcc6633' : true "/>
+				<style>
+					<position value="absolute"/>
+					<left value="-6%"/>
+					<marginTop value="5px"/>
+				</style>
+				<bind name="scaleX" value="(scalePanels*0.85)"/>
+				<bind name="scaleY" value="(scalePanels*0.85)"/>
+				<bind name="style" value="'backgroundImage'; ('url:../clan_icons/' + clanTag + '.png')"/>
+			</block>
+		</block>
+		<block><!-- ShipInfo Icons -->	
+			<style>
+				<width value="80"/>
+				<marginRight value="5"/>
+				<marginTop value="0px"/>
+			</style>
+			<bind name="visible" value="showParams"/>
+			<bind name="style" value="'width'; showParams ? (scalePanels*120) : '0px'"/>	
+			<bind name="style" value="'fontSize'; showParams ? (scalePanels*20) : '14'"/>			
+			<block type="text"> <!-- sunk icon -->
+				<bind name="text" value="'V'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="!isAlive ? showParams? true : false : false"/>
+				<style>
+					<position value="absolute"/>
+					<right value="5%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginBottom value="-6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*30) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*24)"/>
+			</block>
+			<block type="text"> <!-- max_speed icon -->
+				<bind name="text" value="'L'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? true : false : false"/>
+				<style>
+					<position value="absolute"/>
+					<right value="5%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-3px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- artillery icon -->
+				<bind name="text" value="'F'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? (shipInfo.artillery_guns_count>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<right value="35%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- aircarrier icon -->
+				<bind name="text" value="'H'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.numSquadrons>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<right value="35%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>	
+			<block type="text"> <!-- torpedoes icon -->
+				<bind name="text" value="'J'"/>
+				<styleClass value="$TextDefault"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.torpedoes_guns_count>0): false : false"/>
+				<style>
+					<position value="absolute"/>
+					<right value="65%"/>
+					<width value="20"/>
+					<fontFamily value="$WoWsSymbol"/>
+					<fontSize value="14"/>
+					<marginTop value="-2px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*20) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>		
+			<block type="text"> <!-- max_speed -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.maxSpeed, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? true : false : false"/>
+				<style>
+					<textAlign value="right"/>
+					<position value="absolute"/>
+					<right value="8%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- artillery -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.artillery_max_dist, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams? (shipInfo.artillery_guns_count>0): false : false"/>
+				<style>
+					<textAlign value="right"/>
+					<position value="absolute"/>
+					<right value="38%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+			<block type="text"> <!-- aircarrier -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="shipInfo.numSquadrons+' / '+shipInfo.numMaxPlanes"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.numSquadrons>0): false : false"/>
+				<style>
+					<textAlign value="right"/>
+					<position value="absolute"/>
+					<right value="38%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*66) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>	
+			<block type="text"> <!-- torpedoes -->
+				<styleClass value="$TextSmallWhite"/>
+				<bind name="text" value="format(shipInfo.torpedoes_max_dist, 1)"/>
+				<bind name="class" value="$None"/>
+				<bind name="visible" value="isAlive ? showParams?  (shipInfo.torpedoes_guns_count>0): false : false"/>
+				<style>
+					<textAlign value="right"/>
+					<position value="absolute"/>
+					<right value="68%"/>
+					<width value="40"/>
+					<marginTop value="6px"/>
+				</style>
+				<bind name="style" value="'width'; showParams ? (scalePanels*36) : '0px'"/>
+				<bind name="style" value="'fontSize'; (scalePanels*14)"/>
+			</block>
+		</block>		
+		<block className="dock_submenu_item_bg" type="native">
+			<bind name="transition" value="mouseDown || contextMenuVisible || rollOver; 0.1; {alpha: 0}; {alpha: 1}"/>
+			<style>
+				<position value="absolute"/>
+				<right value="5"/>
+			</style>
+			<styleClass value="$FullsizeAbsolute"/>
+		</block>
+		<block>
+			<bind name="visible" value="(division &gt; 0) &amp;&amp; !(divisionHidden)"/>
+			<styleClass value="$MiddleVAligned"/>
+			<style>
+				<position value="absolute"/>
+				<right value="2"/>
+			</style>
+			<block className="division_item" type="native">
+				<bind name="gotoAndStop!" value="divisionSign + 1 + 10"/>
+			</block>
+		</block>
+		<block>
+			<style>
+				<position value="absolute"/>
+				<width value="10"/>
+				<right value="2"/>
+				<marginTop value="-2"/>
+			</style>
+			<bind name="instance" value="'UIListVoiceTextChatIcons'; {	_isSelf: isSelf, _isTextChatMuted: mute, _selfPlayerDivisionId: divisionId }"/>
+		</block>
+		<style>
+			<height value="25"/>
+			<flow value="horizontal"/>
+		</style>
+		<bind name="style" value="'height'; (scalePanels*30)"/>
+	</block>
+</ui>

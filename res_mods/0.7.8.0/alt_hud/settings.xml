@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<alt_hud>
+<!--
+Угломер
+ active="{true/false}" - Вкл (true)/Выкл (false)
+ ref="{строка}"        - конфигурационный файл угормера.
+-->
+ <navigator active="true" ref="navigator.xml"/>
+ <ngCrosshair active="false" ref="crosshair.xml"/> 
+ <smokeGeneratorTimer active="false" ref="smoke_generator_timer.xml"/>
+</alt_hud>

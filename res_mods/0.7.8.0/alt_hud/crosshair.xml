@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ng_cross>
+  <!--
+    Значение игрового "узла" в метрах в секунду
+  -->
+  <knot value="2.6"/>
+
+  <!--
+    Статический горизонтальный "набор":
+
+    Линии и "перекрестие"
+  -->
+  <horizontal>
+    <!--
+      Линии
+      <lines>
+        <line [Параметры отрисовки линии]/>
+      </lines>
+
+    [Параметры отрисовки линии]
+      margin = {число}       - отступ от края экрана в пикселах
+      gap = {число}          - "чистое" пространство в центре в пикселах
+      color = {целое число}  - цвет линии (RGB)
+      thickness = {число}    - толщина линии в пикселах
+      alpha = {число [0..1]} - прозрачность линии. 0 - полностью прозрачная, 1 - полностью не прозрачная
+      offset = {число}       - смещение в пикселах по вертикали относительно центра экрана. + вниз, - вверх
+    -->
+    <lines>
+      <line margin="50" gap="200" color="0x000000" thickness="3" alpha="0.2" offset="0"/>
+      <line margin="50" gap="200" color="0xffffff" thickness="1" alpha="1" offset="0"/>
+    </lines>
+
+    <!--
+      "Перекрестие"
+
+      "Перекрестие" - специальный статичный элемент,
+      который отрисовывается в центре экрана с учетом заданного {смещения}
+
+      <cross>
+        [Параметры отрисовки]
+        [Смещение]
+      </cross>
+
+      [Смещение]
+        <offset x = {число} y = {число}/>
+
+
+      [Параметры отрисовки]
+        <draw [Начальное положение "кисти"]>
+          [Команды отрисовки]
+        </draw>
+
+      [Начальное положение "кисти"]
+        x = {число} - смещение в пикселах по горизонтали. - влево, + вправо
+        y = {число} - смещение в пикселах по вертикали. - вверх, + вниз
+
+      [Команды отрисовки]
+        Команды отрисовки выполняются последовательно в том порядке, в котором описаны в файле.
+        Поддерживаются следующие команды:
+          moveTo    - переместить "кисть"
+          lineTo    - отрисовать линию
+          lineStyle - задать "стиль" линии
+          fill      - задать "заливку"
+          circle    - отрисовать круг
+          rect      - отрисовать прямоугольник
+
+        <moveTo x = {число} y = {число}/>
+        <lineTo x = {число} y = {число}/>
+
+        <lineStyle [Параметры линии]>
+        [Параметры линии]
+          color = {целое}        - цвет линии (RGB)
+          thickness = {целое}    - толщина линии в пикселах
+          alpha = {число [0..1]} - прозрачность линии
+          caps = {none/square/round} - "концы" линии. нет/крадраные/скругленные. По-умолчанию: скругленные
+          joints = {bevel/miter/round} - "стык" линии. скос/угол/скруленный. По-умолчанию: скругленный
+
+        <fill color = {целое} alpha = {цисло [0..1]}/>
+        <circle x = {число} y = {число} radius = {число}/>
+        <rect  x = {число} y = {число} width = {число} height = {число}/>
+    -->
+    <cross>
+      <draw x="-7" y="10">
+        <lineStyle color="0x000000" thickness="3" alpha="0.2" caps="none" joints="bevel" />
+        <lineTo x="0" y="0" />
+        <lineTo x="7" y="10" />
+        <moveTo x="-7" y="10" />
+        <lineStyle color="0xffffff" thickness="1" alpha="1" caps="none" joints="bevel" />
+        <lineTo x="0" y="0" />
+        <lineTo x="7" y="10" />
+      </draw>
+      <offset x="0" y="-2" />
+    </cross>
+  </horizontal>
+
+  <!--
+    Шаблоны динамических элементов
+  -->
+  <templates>
+    <!--
+      Спрайты:
+
+      <template id = {строка}>
+        [Параметры отрисовки]
+        <label>
+          [Параметры текстовой метки]
+        </label>
+      </template>
+
+      [Параметры отрисовки] полностью аналогичны "перекрестию"
+
+      [Параметры текстовой метки]
+        <format font = {строка} size = {целое} color = {целое} alpha = {число [0..1]}/>
+        <offset x = {число} y = {число}/>
+        <filters>
+          [Доп. эффекты отричовки текста]
+        </filters>
+
+        [Доп. эффекты отричовки текста]
+        Эффекты применяются последовательно, в том порядке, в котором они описаны
+        Поддерживаются следующие эффекты:
+
+        <glow [Параметры свечения]/> - Свечение ("абрис") текста
+        [Параметры свечения]:
+          color = {целое}        - Цвет
+          alpha = {число [0..1]} - Прозрачность. 1 - полностью непрозрачно. 0 - полночтью прозрачно.
+          x = {число}            - Степень размытия по горизонтали
+          y = {число}            - Степень размытия по вертикали
+          strength = {число}     - Интенсивность
+
+        <shadow [Параметры тени]/> - Тень текста
+        [Параметры тени]:
+          color = {целое}        - Цвет
+          alpha = {число [0..1]} - Прозрачность. 1 - полностью непрозрачно. 0 - полночтью прозрачно.
+          x = {число}            - Степень размытия по горизонтали
+          y = {число}            - Степень размытия по вертикали
+          strength = {число}     - Интенсивность
+          angle = {число}        - Угол, отрабрасывания тени
+          distance = {число}     - Расстояние смещения для тени (в пикселях)
+    -->
+    <sprites>
+      <template id="topSpriteMajor">
+        <draw x="0" y="0">
+          <lineStyle color="0x000000" thickness="3" alpha="0.2" caps="none" joints="bevel" />
+          <lineTo x="0" y="-18" />
+          <moveTo x="0" y="0" />
+          <lineStyle color="0xffffff" thickness="1" alpha="1" caps="none" joints="bevel" />
+          <lineTo x="0" y="-17" />
+        </draw>
+        <label>
+          <format font="$WWSDefaultFont" size="14" color="0xffffff" alpha="1" />
+          <offset x="0" y="-20" />
+          <filters>
+            <shadow color="0x000000" x="1" y="1" alpha="0.6" angle="90" strength="1" distance="0" />
+          </filters>
+        </label>
+      </template>
+      <template id="topSpriteMinor">
+        <draw x="0" y="0">
+          <lineStyle color="0x000000" thickness="3" alpha="0.2" caps="none" joints="bevel" />
+          <lineTo x="0" y="-10" />
+          <moveTo x="0" y="0" />
+          <lineStyle color="0xffffff" thickness="1" alpha="1" caps="none" joints="bevel" />
+          <lineTo x="0" y="-9" />
+        </draw>
+        <label>
+          <format font="$WWSDefaultFont" size="12" color="0xffffff" alpha="1" />
+          <offset x="0" y="-12" />
+          <filters>
+            <shadow color="0x000000" x="1" y="1" alpha="0.6" angle="90" strength="1" distance="0" />
+          </filters>
+        </label>
+      </template>
+      <template id="bottomSpriteMajor">
+        <draw x="0" y="0">
+          <lineStyle color="0x000000" thickness="3" alpha="0.2" caps="none" joints="bevel" />
+          <lineTo x="0" y="18" />
+          <moveTo x="0" y="0" />
+          <lineStyle color="0xffffff" thickness="1" alpha="1" caps="none" joints="bevel" />
+          <lineTo x="0" y="17" />
+        </draw>
+        <label>
+          <format font="$WWSDefaultFont" size="14" color="0xffffff" alpha="1" />
+          <offset x="0" y="20" />
+          <filters>
+            <shadow color="0x000000" x="1" y="1" alpha="0.6" angle="90" strength="1" distance="0" />
+          </filters>
+        </label>
+      </template>
+      <template id="bottomSpriteMinor">
+        <draw x="0" y="0">
+          <lineStyle color="0x000000" thickness="3" alpha="0.2" caps="none" joints="bevel" />
+          <lineTo x="0" y="10" />
+          <moveTo x="0" y="0" />
+          <lineStyle color="0xffffff" thickness="1" alpha="1" caps="none" joints="bevel" />
+          <lineTo x="0" y="9" />
+        </draw>
+        <label>
+          <format font="$WWSDefaultFont" size="12" color="0xffffff" alpha="1" />
+          <offset x="0" y="12" />
+          <filters>
+            <shadow color="0x000000" x="1" y="1" alpha="0.6" angle="90" strength="1" distance="0" />
+          </filters>
+        </label>
+      </template>
+    </sprites>
+
+    <!--
+      Марки (они же "риски", они же "метки")
+      Марка состоит из двух спрайтов (левого и правого), которые отображаются семметрично относительно центра экрана
+
+      <template id = {строка} left = {id шаблона левого спрайта} right = {id шаблона правого спрайта}/>
+    -->
+    <marks>
+      <template id="topMajor" left="topSpriteMajor" right="topSpriteMajor"/>
+      <template id="topMinor" left="topSpriteMinor" right="topSpriteMinor"/>
+      <template id="bottomMajor" left="bottomSpriteMajor" right="bottomSpriteMajor"/>
+      <template id="bottomMinor" left="bottomSpriteMinor" right="bottomSpriteMinor"/>
+    </marks>    
+  </templates>
+
+  <!--
+    Шкалы номограммы:
+    <scales [Общие параметры]>
+      [Параметры шкалы]
+    </scales>
+
+    [Общие параметры]
+      margin = {число} - расстояние от края экрана в пикселах
+      gap = {число}    - "чистое" пространство в центре в пикселах
+      height = {число} - высота в пикселах
+
+    Эти параметры задают область на экране, в рамках которой отрисовываются все шлалы номограммы.
+    За её пределами они не отрисовываются
+
+    [Параметры шлалы]
+      <scale id = {строка} [номинальная скорость] [порог отрисовки]>
+        [Смещение]
+        [Марки]
+      </scale>
+
+    [Номинальная скорость]
+      speed = {число} - скорость в игровых узлах
+
+    [Порог отрисовки]
+      threshold = {число} - грубо говоря, минимальное расстояние между соседними марками,
+      после которого они перестают отрисовываться
+
+    [Марки]
+      <mark id = {id шаблона марки} [Параметры марки]/>
+
+    [Параметры марки]
+      time = {число}   - подлетное время, которому соответсвует данная марка
+      label = {строка} - текстовая метка марки. Если шаблон спрайта не содержит метки, то будет проигнорированно
+  -->
+  <scales margin="80" gap="220" height="50">
+    <scale id="topMajor" speed="30" threshold="0">
+      <offset x="0" y="-1" />
+      <marks>
+        <mark id="topMajor" time="5" label="5"/>
+        <mark id="topMajor" time="10" label="10"/>
+        <mark id="topMajor" time="15" label="15"/>
+        <mark id="topMajor" time="20" label="20"/>
+        <mark id="topMajor" time="25" label="25"/>
+        <mark id="topMajor" time="30" label="30"/>
+      </marks>
+    </scale>
+    <scale id="bottomMajor" speed="20" threshold="0">
+      <offset x="0" y="1" />
+      <marks>
+        <mark id="bottomMajor" time="5" label="5"/>
+        <mark id="bottomMajor" time="10" label="10"/>
+        <mark id="bottomMajor" time="15" label="15"/>
+        <mark id="bottomMajor" time="20" label="20"/>
+        <mark id="bottomMajor" time="25" label="25"/>
+        <mark id="bottomMajor" time="30" label="30"/>
+        <mark id="bottomMajor" time="40" label="20"/>
+        <mark id="bottomMajor" time="50" label="25"/>
+        <mark id="bottomMajor" time="60" label="30"/>
+      </marks>
+    </scale>
+    <scale id="topMinor" speed="30" threshold="0.2645">
+      <offset x="0" y="-1" />
+      <marks>
+        <mark id="topMinor" time="1" label="1"/>
+        <mark id="topMinor" time="2" label="2"/>
+        <mark id="topMinor" time="3" label="3"/>
+        <mark id="topMinor" time="4" label="4"/>
+
+        <mark id="topMinor" time="6" label="6"/>
+        <mark id="topMinor" time="7" label="7"/>
+        <mark id="topMinor" time="8" label="8"/>
+        <mark id="topMinor" time="9" label="9"/>
+
+        <mark id="topMinor" time="11" label="11"/>
+        <mark id="topMinor" time="12" label="12"/>
+        <mark id="topMinor" time="13" label="13"/>
+        <mark id="topMinor" time="14" label="14"/>
+
+        <mark id="topMinor" time="16" label="16"/>
+        <mark id="topMinor" time="17" label="17"/>
+        <mark id="topMinor" time="18" label="18"/>
+        <mark id="topMinor" time="19" label="19"/>
+
+        <mark id="topMinor" time="21" label="21"/>
+        <mark id="topMinor" time="22" label="22"/>
+        <mark id="topMinor" time="23" label="23"/>
+        <mark id="topMinor" time="24" label="24"/>
+
+        <mark id="topMinor" time="26" label="26"/>
+        <mark id="topMinor" time="27" label="27"/>
+        <mark id="topMinor" time="28" label="28"/>
+        <mark id="topMinor" time="29" label="29"/>
+      </marks>
+    </scale>
+    <scale id="bottomMinor" speed="20" threshold="0.3968">
+      <offset x="0" y="1" />
+      <marks>
+        <mark id="bottomMinor" time="1" label="1"/>
+        <mark id="bottomMinor" time="2" label="2"/>
+        <mark id="bottomMinor" time="3" label="3"/>
+        <mark id="bottomMinor" time="4" label="4"/>
+
+        <mark id="bottomMinor" time="6" label="6"/>
+        <mark id="bottomMinor" time="7" label="7"/>
+        <mark id="bottomMinor" time="8" label="8"/>
+        <mark id="bottomMinor" time="9" label="9"/>
+
+        <mark id="bottomMinor" time="11" label="11"/>
+        <mark id="bottomMinor" time="12" label="12"/>
+        <mark id="bottomMinor" time="13" label="13"/>
+        <mark id="bottomMinor" time="14" label="14"/>
+
+        <mark id="bottomMinor" time="16" label="16"/>
+        <mark id="bottomMinor" time="17" label="17"/>
+        <mark id="bottomMinor" time="18" label="18"/>
+        <mark id="bottomMinor" time="19" label="19"/>
+
+        <mark id="bottomMinor" time="21" label="21"/>
+        <mark id="bottomMinor" time="22" label="22"/>
+        <mark id="bottomMinor" time="23" label="23"/>
+        <mark id="bottomMinor" time="24" label="24"/>
+
+        <mark id="bottomMinor" time="26" label="26"/>
+        <mark id="bottomMinor" time="27" label="27"/>
+        <mark id="bottomMinor" time="28" label="28"/>
+        <mark id="bottomMinor" time="29" label="29"/>
+
+        <mark id="bottomMinor" time="32" label="16"/>
+        <mark id="bottomMinor" time="34" label="17"/>
+        <mark id="bottomMinor" time="36" label="18"/>
+        <mark id="bottomMinor" time="38" label="19"/>
+
+        <mark id="bottomMinor" time="42" label="21"/>
+        <mark id="bottomMinor" time="44" label="22"/>
+        <mark id="bottomMinor" time="46" label="23"/>
+        <mark id="bottomMinor" time="48" label="24"/>
+
+        <mark id="bottomMinor" time="52" label="26"/>
+        <mark id="bottomMinor" time="54" label="27"/>
+        <mark id="bottomMinor" time="56" label="28"/>
+        <mark id="bottomMinor" time="58" label="29"/>
+      </marks>
+    </scale>
+  </scales>
+</ng_cross>
